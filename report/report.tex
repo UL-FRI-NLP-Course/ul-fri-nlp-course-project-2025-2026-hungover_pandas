@@ -61,11 +61,21 @@ The abstract goes here.
 
 \section*{Introduction}
 
-% TODO: Write introduction — motivation, problem statement, proposed approach, and related work.
+University student offices receive many repetitive questions about enrollment, exam regulations, study progression, deadlines, certificates, and other administrative procedures. Although this information is usually available on official faculty and university websites or in formal rulebooks, students often struggle to find the relevant answer efficiently. The information is spread across multiple web pages and PDF documents, written in formal language, and can be difficult to interpret without prior familiarity with university procedures.
 
+In this project, we develop a domain-specific AI assistant for the UL FRI student office that helps students access accurate administrative information more easily. Instead of acting as a generic chatbot, the system is designed to answer questions by grounding its responses in official UL FRI and University of Ljubljana documents. This makes the assistant more reliable and better suited for an academic administrative setting, where factual correctness is important.
 
+Our approach is based on retrieval-augmented generation (RAG). The system first retrieves relevant passages from a curated collection of official web pages and PDF documents, and then uses a large language model to generate an answer based on the retrieved content. This combines the flexibility of language models with the reliability of official sources.
 
-%------------------------------------------------
+The goal of the project is to examine whether such a retrieval-based assistant can serve as a useful first point of contact for common student-office questions at UL FRI.%------------------------------------------------
+
+\section*{Related Work}
+
+Recent advances in large language models (LLMs) and retrieval-augmented generation (RAG) have led to a variety of domain-specific question answering systems that closely relate to the goals of this project. Lewis et al.\ \cite{lewis2020rag} formally introduced the RAG architecture, demonstrating how combining neural retrieval with sequence-to-sequence generation improves open-domain question answering by grounding answers in retrieved documents rather than relying solely on parametric knowledge. Subsequent work has studied how to better adapt RAG to specialized domains, where terminology, document structure, and information needs differ substantially from generic web corpora \cite{adlakha2023improving}. These findings support the design choice of grounding the UL FRI assistant in institutional web pages and PDF rulebooks instead of general web search.
+
+A growing body of research explores domain-specific RAG pipelines over technical or organizational documentation. Kim and Lee \cite{kim2024rerag} propose RE-RAG, which explicitly mitigates the negative impact of irrelevant retrieved passages on open-domain QA performance by refining the retrieval and re-ranking stages. Tanaka et al.\ \cite{tanaka2025vdoorag} introduce VDocRAG, a framework for RAG over visually rich documents such as PDFs containing tables and complex layouts, and show that specialized preprocessing of heterogeneous document formats is crucial for high-quality answers. Similarly, domain-focused systems such as the Aggregated Knowledge Model at Lawrence Berkeley National Laboratory combine fine-tuned and RAG-based models over institutional documentation to improve reliability and coverage in a closed-domain QA setting \cite{akm2024}. These works motivate the project’s emphasis on careful document ingestion, chunking, and metadata management for university regulations and procedures.
+
+There is also work specifically targeting question answering over structured institutional or regulatory text. DoQA \cite{campos2020doqa} presents a benchmark for accessing domain-specific FAQ collections via conversational QA, highlighting that realistic information-seeking dialogues often revolve around well-defined but non-trivial information needs in constrained domains. In education-focused settings, recent frameworks combine RAG with LLM-based code interpreters to build more accurate and transparent educational Q\&A systems that draw on curated curricular or institutional knowledge bases \cite{eduqna2025}. Together, these lines of work indicate that retrieval-based assistants over high-quality institutional corpora can serve as reliable first points of contact for users seeking procedural or regulatory information, which is precisely the role envisioned for the UL FRI student-office assistant.
 
 \section*{Dataset}
 
