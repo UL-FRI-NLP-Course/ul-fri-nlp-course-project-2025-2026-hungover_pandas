@@ -1,0 +1,11 @@
+Study Programmes at UL FRI
+
+The Faculty of Computer and Information Science at the University of Ljubljana offers several study programmes.
+
+At Bachelor level, the main programme is Computer and Information Science, taught in Slovenian. There is no English-taught Bachelor programme currently available.
+
+At Master level, the programme Computer Science is fully taught in English and is open to international students. The programme lasts 2 years (4 semesters) and awards 120 ECTS credits.
+
+The Master's programme covers topics including: machine learning, algorithms and data structures, computer vision, natural language processing, software engineering, and distributed systems.
+
+A PhD programme in Computer and Information Science is also available. PhD students are typically funded through research projects and work closely with faculty supervisors.
