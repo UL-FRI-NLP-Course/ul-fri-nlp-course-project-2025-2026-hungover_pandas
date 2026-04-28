@@ -1,0 +1,69 @@
+UL FRI STUDENT CHATBOT — TEST QUESTIONS AND EXPECTED ANSWERS
+=============================================================
+
+CORRECT ANSWER TESTS (bot should answer these correctly):
+
+Q1: What English proficiency score do I need to apply?
+EXPECTED: IELTS 6.5 or TOEFL 90
+
+Q2: What documents do I need to apply to UL FRI?
+EXPECTED: Certified Bachelor's diploma, transcript of records, proof of English proficiency (IELTS 6.5 or TOEFL 90), motivation letter, copy of passport
+
+Q3: When is the application deadline for EU students?
+EXPECTED: May 15th
+
+Q4: How much is the tuition fee for non-EU students?
+EXPECTED: Approximately 2500 EUR per year. EU students pay no tuition.
+
+Q5: Is there a Bachelor's programme in English at UL FRI?
+EXPECTED: No, the Bachelor's is in Slovenian only. The Master's is in English.
+
+Q6: How many ECTS credits does the Master's programme award?
+EXPECTED: 120 ECTS over 2 years (4 semesters)
+
+Q7: Is there a PhD programme at UL FRI?
+EXPECTED: Yes, PhD in Computer and Information Science. Students are typically funded through research projects.
+
+Q8: What language is the Master's programme taught in?
+EXPECTED: English
+
+Q9: How much does a monthly bus pass cost in Ljubljana?
+EXPECTED: Around 20 EUR
+
+Q10: What is BicikeLJ?
+EXPECTED: Ljubljana's public bike-sharing system
+
+Q11: When do dormitory applications open?
+EXPECTED: In June each year
+
+Q12: What health insurance options do international students have?
+EXPECTED: EU students use their European Health Insurance Card (EHIC). Non-EU students must buy private health insurance, approximately 50-80 EUR per month.
+
+Q13: What kind of visa do non-EU students need?
+EXPECTED: A long-stay student visa, type D, applied for at the Slovenian embassy BEFORE arriving in Slovenia.
+
+Q14: What documents do I need to register my residence in Slovenia?
+EXPECTED: Proof of enrolment from UL FRI, proof of accommodation, valid passport, proof of sufficient financial means (approximately 560 EUR per month)
+
+Q15: How long does a student residence permit last?
+EXPECTED: Typically for the duration of the study programme, renewed annually.
+
+
+HALLUCINATION TRAP QUESTIONS (bot should say it doesn't know):
+
+Q16: What is the grading scale at UL FRI?
+EXPECTED: Bot says it doesn't have that information.
+
+Q17: Can I work part-time in Slovenia as a student?
+EXPECTED: Bot says it doesn't have that information.
+
+Q18: What is the name of the student office contact person?
+EXPECTED: Bot says it doesn't have that information.
+
+
+HOW TO RUN THE TEST:
+1. Open a terminal in the code/ folder
+2. Run: python rag.py
+3. Choose mode 2 (interactive chat)
+4. Type each question and note the answer
+5. Mark each answer as: CORRECT / PARTIALLY CORRECT / WRONG / HALLUCINATED
