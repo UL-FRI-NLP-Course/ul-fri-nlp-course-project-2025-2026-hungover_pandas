@@ -34,7 +34,7 @@
 
 \Authors{Aleksa Sibinović, Hristijan Milanovski, and Sara Ivanovska}
 
-\affiliation{\textit{Advisors: Slavko Žitnik}}
+\affiliation{\textit{Advisors: Aleš Žagar}}
 
 \Keywords{Retrieval-Augmented Generation, Domain-Specific Assistant, Large Language Models, Question Answering, Student Office}
 \newcommand{\keywordname}{Keywords}
@@ -44,7 +44,8 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{
-The abstract goes here.
+University student offices routinely handle large volumes of repetitive administrative inquiries, yet the relevant information is often scattered across official websites and formal documents that students find difficult to navigate. In this work, we present a domain-specific AI assistant for the UL FRI student office, built on a retrieval-augmented generation (RAG) pipeline that grounds responses in official institutional sources. The knowledge base was assembled from UL FRI and University of Ljubljana web pages, official PDF rulebooks, and materials obtained directly from the Erasmus coordination office, including a presentation and transcribed student Q&A from the 2026/27 kickoff meeting. Documents are chunked, embedded using a sentence-transformer model, and indexed with FAISS; at query time, Maximum Marginal Relevance retrieval selects diverse, relevant passages that are passed to Gemini 2.5 Flash Lite for answer generation. We evaluate the system on an 18-question benchmark covering Erasmus exchange procedures, using an LLM-as-a-judge framework. The system achieves a mean score of 77.2 out of 100, with 66.7\% of responses rated fully correct, 16.7\% partially correct, and 16.7\% classified as hallucinated — all arising from retrieval failures where the model incorrectly disclaimed knowledge present in the index. These results suggest that RAG-based assistants over curated institutional corpora can serve as effective first points of contact for student administrative queries, while pointing to retrieval robustness as the primary bottleneck for further improvement.
+
 }
 
 %----------------------------------------------------------------------------------------
@@ -83,26 +84,79 @@ Since no pre-existing dataset exists for this domain, we construct our own knowl
 
 \subsection*{Data Sources}
 
-We collect data from three main sources: the \textbf{UL FRI website} (\href{https://www.fri.uni-lj.si}{fri.uni-lj.si}), covering study program descriptions, enrollment procedures, exam rules, and the academic calendar; the \textbf{UL central website} (\href{https://www.uni-lj.si}{uni-lj.si}), containing university-wide student regulations and administrative guidelines; and \textbf{official PDF documents}, such as the Student Statute and enrollment rulebooks.
+In addition to publicly available institutional materials, a key part of our dataset was obtained through direct engagement with the Erasmus coordination process at UL FRI. We attended the official Erasmus exchange kickoff meeting for the 2026/27 academic year, where we interacted with the main coordinator, Vesna Gračner. Through this interaction, we obtained the official presentation used during the session, which contains detailed procedural information about the Erasmus application process, learning agreements, funding, and administrative requirements.
+
+This source proved to be particularly valuable, as it captures practical, experience-driven information that is not always explicitly or clearly documented on official websites. In addition to the presentation itself, we systematically recorded and transcribed questions raised by students during the Q\&A session, along with the corresponding answers provided by the coordinator. These question-answer pairs reflect real user information needs and were used both to enrich the knowledge base and to construct realistic evaluation queries for the assistant.
+
+We complement this primary source with publicly available materials from the \textbf{UL FRI website} (\href{https://www.fri.uni-lj.si}{fri.uni-lj.si}), which provide information on study programmes, enrollment procedures, and exam regulations; the \textbf{University of Ljubljana central website} (\href{https://www.uni-lj.si}{uni-lj.si}), which contains university-wide administrative rules; and \textbf{official PDF documents}, such as the Student Statute and enrollment rulebooks.
+
 
 \subsection*{Data Collection and Processing}
 
-Web pages will be scraped and cleaned to retain only the main textual content, discarding navigational elements and footers. Each document will be stored alongside metadata including its source URL and retrieval date. PDF documents will be processed using text extraction libraries to produce clean plain-text representations. The collected documents will then be split into overlapping chunks to enable fine-grained retrieval of relevant passages, following standard RAG preprocessing practices.
+For the current prototype, the collected materials were manually converted into clean plain-text documents and organized by topic, including admissions, study programmes, visa and residence information, student life, and Erasmus exchange procedures. The Erasmus kickoff presentation and the corresponding student Q\&A content were transformed into structured textual notes and question-answer pairs so that they could be used both as knowledge-base material and as realistic evaluation queries.
+
+The documents are loaded from local text files and split into overlapping chunks, allowing the retrieval system to identify fine-grained passages relevant to a user question. These chunks are then embedded using a sentence-transformer model and stored in a FAISS vector index for similarity-based retrieval. Although the current implementation relies on curated plain-text sources, the same pipeline can be extended to automatically scraped web pages and extracted PDF text, with additional metadata such as source URLs and retrieval dates.
+
 \section*{Methods}
 
-% TODO: Describe data preprocessing pipeline, RAG architecture, embedding model, retrieval mechanism, and any prompt engineering decisions.
+The assistant is built around a retrieval-augmented generation (RAG) pipeline consisting of two stages: an offline indexing stage that preprocesses and stores the knowledge base, and an online inference stage that retrieves relevant passages and generates a grounded answer.
 
-%------------------------------------------------
+\subsection*{Document Indexing}
+
+All knowledge-base documents are loaded and parsed before any queries are processed. Plain-text files are read directly, while PDF documents are parsed page by page, with each page treated as a separate unit. Source path metadata is attached to every document during loading, which later allows the system to attribute each retrieved passage to its origin.
+
+The documents are then split into overlapping chunks using a recursive character splitter with a chunk size of 500 characters and an overlap of 50 characters. The overlap prevents relevant context from being lost at chunk boundaries. Each chunk is embedded into a dense vector representation using a lightweight sentence embedding model \cite{reimers2019sentencebert}, with output vectors L2-normalized to unit length. The resulting embeddings are stored in a FAISS flat index \cite{johnson2019faiss}, which is saved to disk and reused at query time without recomputation.
+
+\subsection*{Retrieval and Generation}
+
+At query time, the FAISS index is loaded and used as the backbone of a retriever configured with Maximum Marginal Relevance (MMR) search. MMR selects a small set of final chunks that are both relevant to the query and mutually diverse, which reduces redundancy when multiple retrieved passages cover the same narrow topic. In our setup, 10 candidate chunks are fetched and the top 3 are selected, with a diversity weight of 0.6.
+
+The retrieved chunks are concatenated into a single context string, each prefixed with its source path. This context is injected into a system prompt that explicitly instructs the model to answer using only the provided passages. If the retrieved context does not contain a sufficient answer, the model is instructed to respond with a fixed fallback message directing the student to the UL FRI website or the student office directly, rather than generating an unsupported response.
+
+Answer generation is handled by Gemini 2.5 Flash Lite, queried at a low temperature to favour consistent and factually grounded outputs. The full pipeline is assembled as a single LangChain chain: the retriever feeds formatted context into the prompt template, which is then passed to the language model and parsed into a plain-text answer. A debug mode is also available during development, which prints the retrieved source passages alongside each answer to support qualitative inspection of retrieval quality.
 
 \section*{Results}
 
-% TODO: Present evaluation results, comparison of configurations, and relevant metrics.
+
+To evaluate the performance of the retrieval-augmented generation (RAG) system powered by Gemini, we constructed a benchmark of 18 questions covering various aspects of the Erasmus exchange programme as documented in FRI's official materials. Each model response was assessed using an LLM-as-a-judge evaluation framework that assigned a numerical score from 0 to 100 and a categorical label: \textsc{correct}, \textsc{partially\_correct}, or \textsc{hallucinated}.
+
+\subsection*{Overall Performance}
+
+Across all 18 questions, the system achieved a mean Gemini score of \textbf{77.2} out of 100, as shown in Figure \ref{fig:scores}. The score distribution was notably bimodal: the majority of responses received perfect or near-perfect scores, while a small subset received a score of zero, reflecting complete retrieval failures. The median score was 100, and both the 50th and 75th percentiles were at the maximum, indicating that the system performed excellently on the bulk of queries.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.475\textwidth]{per_question_scores.png}
+    \caption{Per question scores evaluated with the Gemini API}
+    \label{fig:scores}
+\end{figure}
+
+\subsection*{Categorical Breakdown}
+
+The categorical assessment reveals a clearer picture of where the system succeeds and where it fails. Of the 18 questions:
+
+\begin{itemize}
+    \item \textbf{12 (66.7\%)} were rated \textsc{correct}, with an average score of 99.2, indicating that the system accurately retrieved and synthesised the relevant information in almost all such cases.
+    \item \textbf{3 (16.7\%)} were rated \textsc{partially\_correct}, with an average score of 66.7. These responses captured some relevant information but omitted key details required for a complete answer.
+    \item \textbf{3 (16.7\%)} were rated \textsc{hallucinated}, each receiving a score of 0. In all three cases the model incorrectly claimed it did not possess the requested information, directing the user to external sources, despite the answer being present in the knowledge base.
+\end{itemize}
+
+\subsection*{Analysis of Errors}
+
+\paragraph{Hallucinated Responses.}
+The three hallucinated responses (Q8, Q9, Q12) share a common failure mode: the model responded with a disclaimer stating it lacked the information, rather than retrieving it from the knowledge base. Concretely, Q8 asked how the Erasmus scholarship is paid (the correct answer being that 80\% is disbursed before the exchange and 20\% after completion), Q9 asked for the minimum and maximum duration of an exchange (2 and 12 months, respectively), and Q12 inquired whether language testing is mandatory before Erasmus (it is not, though some partner universities may require certificates). In all three instances the information was available in the indexed documents, suggesting that the retrieval step failed to surface the correct passage rather than the generation step fabricating an incorrect answer. This type of failure---where the model opts out rather than producing a plausible but wrong response---is conservative in one sense, but remains undesirable in a deployed assistant context.
+
+\paragraph{Partially Correct Responses.}
+The three partially correct responses (Q1, Q14, Q16) reflect a different failure mode: incomplete information synthesis. For Q1, the model correctly stated that FRI nominates the student to the partner university but omitted the subsequent step of applying directly to the host institution. For Q14, it correctly identified content similarity as a factor in course recognition upon return, but missed the additional condition that the outcome also depends on whether specific FRI programme requirements are met. For Q16, the model mentioned the FRI Erasmus office as a point of contact for problems encountered abroad, but failed to list other important support channels such as the host university coordinator, Erasmus mentor, the UL central office, or student tutors. These partial answers suggest that while retrieval is succeeding, the generation step is not consistently consolidating all relevant spans from the retrieved context.
+
 
 %------------------------------------------------
 
+
+
 \section*{Discussion}
 
-% TODO: Critically evaluate the system, discuss limitations, and suggest future improvements.
+The overall accuracy of the system is encouraging: two-thirds of all questions were answered correctly and completely, and the mean score exceeded 77 out of 100. However, the hallucination and partial correctness rates---each affecting approximately one in six questions---represent clear areas for improvement. The hallucination failures in particular suggest that the retrieval pipeline may be sensitive to the phrasing of certain queries, especially those involving procedural or numerical details that may be distributed across different parts of the source documents. Future work should explore query reformulation strategies, improved document chunking, and retrieval confidence thresholds to reduce the rate of uninformative opt-out responses. Addressing the partial completeness failures may additionally benefit from multi-passage fusion techniques or more explicit prompting of the generative model to enumerate all relevant details before producing a final answer.
 
 %----------------------------------------------------------------------------------------
 %   REFERENCE LIST
