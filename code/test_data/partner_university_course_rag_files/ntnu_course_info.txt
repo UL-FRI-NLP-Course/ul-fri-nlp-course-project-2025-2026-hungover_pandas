@@ -1,0 +1,66 @@
+INSTITUTION: Norwegian University of Science and Technology (NTNU)
+COUNTRY: Norway
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Exchange course selection and English-taught Computer Science-related courses.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- NTNU exchange studies:
+  https://www.ntnu.edu/studies/exchange
+- NTNU courses for exchange students:
+  https://www.ntnu.edu/studies/exchange/courses
+- NTNU courses for exchange students in Trondheim:
+  https://www.ntnu.edu/studies/exchange/trondheim
+
+EXCHANGE STUDENT COURSE SELECTION
+
+Incoming exchange students at NTNU can choose courses depending on campus, academic level, prerequisites, and course availability.
+
+NTNU emphasizes that exchange students must be able to find enough eligible courses in the chosen city/campus. Students may only choose courses in one city.
+
+RELEVANT CAMPUSES AND STUDY AREAS
+
+NTNU offers exchange studies in several cities, including:
+- Trondheim,
+- Gjøvik,
+- Ålesund.
+
+For Computer Science and related areas, students should pay special attention to course availability in the correct campus.
+
+The official NTNU exchange course pages list English-taught course options and refer students to programme pages for more detailed course information.
+
+COMPUTER SCIENCE RELEVANCE
+
+Relevant English-taught areas may include:
+- Applied Computer Science,
+- Information Security,
+- Interaction Design,
+- Software Engineering,
+- Computer Science,
+- and related ICT fields.
+
+NTNU is especially relevant for students interested in:
+- information security,
+- applied computer science,
+- interaction design,
+- software systems,
+- and technical computing.
+
+IMPORTANT LIMITATIONS
+
+Course options depend on:
+- campus,
+- semester,
+- prerequisites,
+- level of study,
+- capacity,
+- and whether the course is open to exchange students.
+
+The assistant must not assume that a student can freely combine courses across NTNU campuses.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about NTNU, the assistant should say that NTNU requires students to find enough eligible courses in one chosen city/campus, and that official NTNU exchange course pages should be checked before preparing the Learning Agreement.
+
+Example answer:
+“NTNU can be a good Erasmus option for Computer Science-related topics, especially applied computer science and information security. However, you must check that enough eligible courses are available in the same NTNU city/campus and confirm them in your Learning Agreement.”

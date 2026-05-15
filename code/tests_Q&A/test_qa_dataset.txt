@@ -1,0 +1,302 @@
+UL FRI ERASMUS RAG — 100 EVALUATION QUESTION/ANSWER PAIRS
+Arranged from easier to harder by information complexity.
+
+Q1: What happens after I am selected for an Erasmus+ exchange?
+A: After selection, UL FRI nominates the student to the selected partner institution abroad. The host institution then sends application instructions, deadlines, required forms, and practical information. The student must also apply for Erasmus+ financial support through the University of Ljubljana online system.
+
+Q2: Who nominates me to the Erasmus+ partner university?
+A: UL FRI nominates the selected student to the chosen Erasmus+ partner institution.
+
+Q3: Do I still need to apply to the host university after UL FRI nominates me?
+A: Yes. After nomination, the host university usually sends its own application instructions. The student must follow the host university’s procedure, submit required documents, and respect the host institution’s deadline.
+
+Q4: What documents does the host institution application usually include?
+A: It usually includes an application form, a Learning Agreement listing planned courses or obligations, and sometimes an accommodation form or housing information.
+
+Q5: What is the Learning Agreement?
+A: The Learning Agreement is a document that defines which courses or academic obligations the student will complete abroad and how they will be recognized at the home faculty after return.
+
+Q6: Who has to approve the Learning Agreement?
+A: The Learning Agreement must usually be approved by the student, the home Erasmus+ or FRI coordinator, and the host institution coordinator. In some cases, the institutional coordinator may also need to approve it.
+
+Q7: When should the Learning Agreement be prepared?
+A: The Learning Agreement should be prepared and approved before the start of mobility.
+
+Q8: What is OLA?
+A: OLA stands for Online Learning Agreement. It is the digital version of the Learning Agreement used for Erasmus+ study mobility when the host institution supports digital signing.
+
+Q9: What should I do if the host university does not support OLA?
+A: If the host institution does not support digital signing through OLA, the student may use the alternative Word/PDF Learning Agreement form or the FRI platform, depending on the instructions.
+
+Q10: What information should I include when choosing courses in the Learning Agreement?
+A: The student should include the selected courses or academic obligations at the host institution, ECTS credits, semester information, and links to course descriptions or course catalogues so the coordinator can evaluate recognition.
+
+Q11: How many ECTS do I need for one semester of Erasmus+ study exchange?
+A: For one semester, the student must complete at least 20 ECTS credits abroad and have them recognized at the home institution to meet the Erasmus+ funding requirement.
+
+Q12: How many ECTS do I need for a full-year Erasmus+ study exchange?
+A: For a full academic year exchange, the student must complete at least 40 ECTS credits abroad and have them recognized at the home institution.
+
+Q13: What happens if I obtain fewer than 20 ECTS during one semester abroad?
+A: If the student obtains fewer than 20 ECTS during the exchange, Erasmus+ financial support may be limited to 3 months. Recognition of completed obligations depends on the content and how it matches the student’s study programme at FRI.
+
+Q14: Can I take language courses during Erasmus+?
+A: Yes. According to the UL FRI guidance, language courses may be included as general elective courses, if accepted through the Learning Agreement process.
+
+Q15: Can I complete mandatory FRI courses remotely while I am on Erasmus+?
+A: No. Mandatory FRI courses that the student should complete at FRI cannot be completed remotely during the Erasmus+ exchange.
+
+Q16: Can I take an elective course abroad?
+A: Yes. For FRI elective courses, the student can usually choose a course abroad from the field of computer and information science, subject to coordinator approval through the Learning Agreement.
+
+Q17: Can I replace a mandatory FRI course with a course abroad?
+A: Yes, but only if the course abroad is sufficiently equivalent in content. If no equivalent course exists, another elective may be chosen instead, depending on approval.
+
+Q18: Can I do my bachelor’s or master’s thesis abroad?
+A: Yes, but not at all institutions. The student needs a mentor at FRI and a mentor at the host institution, and the thesis work must be included in the Learning Agreement.
+
+Q19: How many ECTS does thesis work count for in the Erasmus+ context?
+A: In the UL FRI guidance, bachelor thesis work is listed as 6 ECTS and master thesis work as 24 ECTS.
+
+Q20: What is the Erasmus+ financial support application?
+A: It is the University of Ljubljana online application through which selected students apply for Erasmus+ financial support and access or complete the Online Learning Agreement.
+
+Q21: Where do I apply for Erasmus+ financial support?
+A: Students apply through the University of Ljubljana online financial support application at: https://studij.uni-lj.si/finpomoc/finpomoc_prva.asp
+
+Q22: When must my Erasmus+ financial support application be complete?
+A: The application must be complete at least 10 working days before the start of mobility, although final deadlines also apply depending on the exchange semester.
+
+Q23: What are the final deadlines for Erasmus+ financial support in 2026/27?
+A: For students going in the first semester or for the full academic year, the final deadline is 15 October 2026. For students going in the second semester, the final deadline is 15 March 2027. However, the application must still be complete at least 10 working days before mobility starts, so many students have an earlier practical deadline.
+
+Q24: If my exchange starts on 1 September 2026, is 15 October still my deadline?
+A: No. If the exchange starts on 1 September 2026, the application must be completed earlier, for example by 15 August 2026, because the complete application is required before the start of mobility.
+
+Q25: What documents do I need for the Erasmus+ financial support application?
+A: The required documents include a Letter of Acceptance, Learning Agreement, copy or photo of a Slovenian bank card, certificate of enrollment for 2026/27, and supporting documents for additional grants if applicable. OLS language assessment results may also be uploaded if completed.
+
+Q26: Can an email from the host university count as a Letter of Acceptance?
+A: Yes. The Letter of Acceptance may be an official letter, an email confirming acceptance, or a fully signed Learning Agreement, depending on the instructions.
+
+Q27: What if I cannot get the host coordinator’s signature on the Learning Agreement before the application deadline?
+A: The student may temporarily upload a Learning Agreement signed only by the student and the home coordinator. The fully signed Learning Agreement must then be uploaded within 15 days after the start of mobility.
+
+Q28: Can Erasmus+ payments be made to any bank account?
+A: No. Payments can only be made to bank accounts opened in the Republic of Slovenia.
+
+Q29: What happens after I submit the complete Erasmus+ financial support application?
+A: After the application is complete and all required documents are uploaded, the student receives the Erasmus+ Grant Agreement by email with signing instructions.
+
+Q30: How do I sign the Erasmus+ Grant Agreement?
+A: The agreement normally has to be signed using a qualified digital signature and uploaded back into the Erasmus+ application at least 10 days before departure.
+
+Q31: What if I cannot obtain a qualified digital signature?
+A: Only in justified exceptional cases, the student may use the old procedure: print the agreement, sign it by hand, and send it by post to the University of Ljubljana.
+
+Q32: How is the Erasmus+ scholarship paid?
+A: The first payment includes 80% of the basic Erasmus+ financial support, 80% of the additional grant for students with fewer opportunities if applicable, and 80% of standard travel support. The remaining funds are paid after successful completion of mobility.
+
+Q33: When is the first Erasmus+ payment transferred?
+A: After the signed Grant Agreement is returned, the University of Ljubljana transfers the first payment within 30 days or before departure, whichever comes first.
+
+Q34: What is the monthly Erasmus+ grant for Group 1 countries in 2026/27?
+A: The monthly grant for Group 1 high-cost countries is 674 EUR. This group includes Austria, Belgium, Denmark, Finland, France, Germany, Iceland, Ireland, Italy, Liechtenstein, Luxembourg, the Netherlands, Norway, and Sweden.
+
+Q35: What is the monthly Erasmus+ grant for Group 2 countries in 2026/27?
+A: The monthly grant for Group 2 medium-cost countries is 606 EUR. This group includes Cyprus, Czech Republic, Estonia, Greece, Latvia, Malta, Portugal, Slovakia, and Spain.
+
+Q36: What is the monthly Erasmus+ grant for Group 3 countries in 2026/27?
+A: The monthly grant for Group 3 lower-cost countries is 550 EUR. This group includes Bulgaria, Croatia, Lithuania, Hungary, Poland, Romania, North Macedonia, Serbia, and Turkey.
+
+Q37: Can students with fewer opportunities receive extra Erasmus+ funding?
+A: Yes. Eligible students with fewer opportunities may receive an additional grant of 250 EUR per month if they meet the criteria and upload the required supporting documents when submitting the financial support application.
+
+Q38: Can I submit documents for the additional grant for fewer opportunities later?
+A: No. The supporting document for the additional grant must be uploaded when submitting the Erasmus+ financial support application. Later submission is not possible.
+
+Q39: What are some examples of eligibility for the additional grant for fewer opportunities?
+A: A student may be eligible if they have special needs status, special student status, relevant CSD/ZZZS/ZRSŠ/ZPIZ documentation, come from a single-parent or foster family, are a parent of a child under 26, have international protection in Slovenia, or are a member of the Roma community.
+
+Q40: What if my name is not on the document proving eligibility for the fewer opportunities grant?
+A: If the student’s name is not listed on the decision or document, they must attach proof that they live in the same household as the person named in the document.
+
+Q41: Can non-Slovenian students apply for the additional grant for fewer opportunities?
+A: Yes. Students without Slovenian citizenship may submit equivalent official documents and official translations into Slovenian or English proving a disadvantaged background according to comparable criteria.
+
+Q42: What is travel support?
+A: Travel support is Erasmus+ funding for travel costs. The amount depends on the one-way distance between Ljubljana and the mobility destination, calculated with the EU Distance Calculator, and on whether the travel is green or non-green.
+
+Q43: What is the Erasmus+ travel support for 100–499 km?
+A: For 100–499 km, non-green travel support is 211 EUR and green travel support is 285 EUR.
+
+Q44: What is the Erasmus+ travel support for 500–1999 km?
+A: For 500–1999 km, non-green travel support is 309 EUR and green travel support is 417 EUR.
+
+Q45: What counts as green travel?
+A: Green travel means that more than 50% of the journey to and from the mobility destination is completed using low-emission transport such as bus, train, bicycle, or shared transport such as GoOpti.
+
+Q46: Does carpooling count as green travel?
+A: No. Airplanes, motorcycles, cars including carpooling, and boats are not considered green means of transport in the provided guidance.
+
+Q47: How do I prove green travel?
+A: The student must provide appropriate documents such as tickets showing the travel date and route, receipts, and a declaration of honor. The travel dates must match the mobility dates confirmed in the certificate of duration.
+
+Q48: Can I get funding for extra travel days if I travel green?
+A: Yes. Students using green travel may request funding for up to 6 additional travel days if needed: up to 3 days for departure and up to 3 days for return.
+
+Q49: What is the Erasmus+ Interrail Pass?
+A: It is an Interrail Global Pass intended to encourage green transport for Erasmus+ participants. It is available as 4 or 6 travel days within a 6-month period.
+
+Q50: How long must an Erasmus+ exchange last?
+A: An Erasmus+ exchange must last at least 2 full months, or 60 days.
+
+Q51: What is the maximum length of an Erasmus+ exchange?
+A: An Erasmus+ exchange may last up to 12 months, although financial support is limited to 5 months for one-semester exchanges and 10 months for two-semester exchanges.
+
+Q52: How much financial support can I receive for one semester?
+A: The maximum Erasmus+ financial support for a one-semester exchange is limited to 5 months, or 150 days.
+
+Q53: How much financial support can I receive for a full-year exchange?
+A: The maximum Erasmus+ financial support for a two-semester exchange is limited to 10 months, or 300 days.
+
+Q54: Can I stay abroad longer than the funded period?
+A: Yes. A student may stay on mobility longer, up to the Erasmus+ maximum period, but without financial support beyond the funding limits.
+
+Q55: What counts as the first day of Erasmus+ mobility?
+A: The first day is the first day the student must be present at the host institution, such as the first lecture, welcome event, or language/intercultural course included in the Learning Agreement. It is not necessarily the day of arrival.
+
+Q56: What counts as the last day of Erasmus+ mobility?
+A: The last day is the final day the student must be present at the host institution, such as the last lecture or exam. It is not necessarily the day of departure.
+
+Q57: What is combined or blended mobility?
+A: Combined or blended mobility means that physical mobility abroad is combined with a virtual mobility component. The virtual part is not funded by Erasmus+ and does not count toward the Erasmus+ status quota.
+
+Q58: How long must I stay physically abroad in combined mobility to receive Erasmus+ funding?
+A: For combined mobility, the student must spend at least 2 continuous months physically abroad to be eligible for Erasmus+ financial support and additional grants.
+
+Q59: Who is responsible for arranging accommodation?
+A: The student is responsible for arranging accommodation. The University of Ljubljana is not responsible for housing issues.
+
+Q60: What should I be careful about when searching for accommodation?
+A: Students should be cautious because online accommodation scams are common. They should not transfer money in advance without verified information and without properly checking the accommodation.
+
+Q61: Is OLS language assessment mandatory?
+A: In the UL financial support guidance, OLS is described as not mandatory but highly recommended. However, some Erasmus guidance documents still describe OLS as required for some mobility contexts. The safest answer is that students should follow the latest UL and host institution instructions since the requirement is dependent on chosen partner instituion and program.
+
+Q62: Can the host university require a language certificate?
+A: Yes. Some host universities may require proof of language proficiency or certificates such as IELTS, TOEFL, Cambridge, or equivalent documents.
+
+Q63: What is the purpose of OLS?
+A: OLS, or Online Language Support, is designed to help Erasmus+ students improve their knowledge of the main language of instruction before and during their stay abroad.
+
+Q64: What rights do Erasmus+ students have before mobility?
+A: Before mobility, students are entitled to guidance on the application process, information about the receiving institution, information about recognition and grading systems, information about insurance, housing, visas if needed, and support for special needs.
+
+Q65: What agreements must Erasmus+ students sign before mobility?
+A: Students must sign a Grant Agreement with the sending institution and a Learning Agreement with the sending and receiving institutions.
+
+Q66: Do Erasmus+ students have to pay tuition fees at the host university?
+A: No. Erasmus+ students must not be charged tuition, registration, examination, laboratory, or library access fees during the mobility period.
+
+Q67: Can the host institution charge any small fees?
+A: Yes. A student may be charged small fees on the same basis as local students, such as fees for insurance, student union membership, or study-related materials and equipment.
+
+Q68: What rights do Erasmus+ students have during mobility?
+A: During mobility, students have the right to equal treatment, non-discrimination, academic freedom, access to mentors or buddy networks where available, information about student organizations and support services, and continuation of the same home-country student grants or loans.
+
+Q69: What duties do Erasmus+ students have during mobility?
+A: Students must respect the rules of the receiving institution and host country, follow codes of conduct, act responsibly, avoid behavior that poses health or safety risks, respect academic integrity, and perform their academic obligations to the best of their ability.
+
+Q70: Can I request changes to the Learning Agreement during mobility?
+A: Yes. Erasmus+ students can request changes to the Learning Agreement within the deadline decided by the sending and receiving institutions. The changes must be validated by the relevant parties.
+
+Q71: When should I request an extension of mobility?
+A: A request to extend the mobility period must be submitted at least one month before the end of the originally planned mobility period.
+
+Q72: What recognition am I entitled to after mobility?
+A: The student is entitled to full automatic academic recognition from the sending institution for activities successfully completed during mobility, as long as they are in accordance with the Learning Agreement.
+
+Q73: When should the receiving institution issue the Transcript of Records?
+A: The receiving institution should issue the Transcript of Records, preferably in digital format, within five weeks of the publication of the student’s results.
+
+Q74: What must I do after Erasmus+ mobility?
+A: The student must submit required documentation via the UL portal and Studis, and complete the participant report providing feedback about the Erasmus+ mobility period.
+
+Q75: When must I submit documents after returning from Erasmus+?
+A: The student must submit documents as soon as they have all required documentation, no later than 3 months after the end of the exchange or before the end of the academic year in Studis.
+
+Q76: Who can help me if I have problems during Erasmus+?
+A: The student can contact the coordinator at the host institution, the Erasmus mentor, the FRI coordinator, the UL international office, or FRI tutors.
+
+Q77: What is the FRI Erasmus contact email?
+A: The FRI Erasmus contact email is erasmus@fri.uni-lj.si.
+
+Q78: What are the FRI Erasmus office hours listed in the dataset?
+A: The listed office hours are Monday from 10:00 to 11:00, online by Zoom or in office R3.03.
+
+Q79: What visa or residence rule should the assistant follow for Erasmus+ questions?
+A: The assistant should explain that visa and residence requirements depend on citizenship, destination country, mobility duration, and national legislation. Students should verify information with the host institution, embassy or consulate, official government immigration portals, and Erasmus+ guidance resources.
+
+Q80: What residence rights do EU citizens have as students in another EU country?
+A: EU citizens generally have the right to live in another EU country for the duration of their studies if they are enrolled at an approved educational institution, have sufficient financial resources, and have comprehensive health insurance.
+
+Q81: Can an EU student be required to register residence immediately after arrival?
+A: During the first 3 months, the host country generally cannot require residence registration. After 3 months, it may require the student to register with local authorities and prove enrollment, health insurance, and sufficient resources.
+
+Q82: What documents may an EU student need for residence registration after 3 months?
+A: The student may need proof of enrollment, proof of comprehensive health insurance, and a declaration of sufficient financial resources.
+
+Q83: What should non-EU students know about visa and residence requirements?
+A: Non-EU students may need a student visa, temporary residence permit, proof of enrollment, proof of accommodation, proof of financial means, and health insurance. Requirements depend on citizenship, host country, duration of stay, and local legislation.
+
+Q84: When should non-EU students start visa or residence procedures?
+A: They should start early because visa and residence procedures may take several weeks or months. They should follow host institution instructions and consult the relevant embassy or consulate.
+
+Q85: What official resource should non-EU students use for EU immigration information?
+A: They should consult the EU Immigration Portal: https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal_en
+
+Q86: Which official source should students use for student residence rights in the EU?
+A: They should use the Your Europe page on student residence rights: https://europa.eu/youreurope/citizens/residence/residence-rights/students/index_en.htm
+
+Q87: Where can students find official visa or residence information for Slovenia?
+A: Students can consult the Slovenian Government entry and residence page, the University of Ljubljana temporary residence permit page, and the EU Immigration Portal page for students in Slovenia.
+
+Q88: What is short-term doctoral mobility?
+A: Short-term doctoral mobility is Erasmus+ mobility for doctoral students who want to complete part of their regular study obligations, practical training, research work, or doctoral thesis preparation abroad.
+
+Q89: What is the eligible period for the UL FRI short-term doctoral mobility call?
+A: The eligible period is from 1 June 2026 to 30 June 2027, or until available funding is exhausted.
+
+Q90: When must doctoral students apply for short-term doctoral mobility?
+A: They must submit the application form and all mandatory attachments at least 1.5 months before the start of mobility.
+
+Q91: How do doctoral students apply for short-term doctoral mobility?
+A: They apply by sending the application form and all required attachments by email to erasmus@fri.uni-lj.si.
+
+Q92: Can UL FRI students do Erasmus+ traineeships?
+A: Yes. UL FRI students may complete practical traineeships within the Erasmus+ programme.
+
+Q93: What is the eligible period for the 2025/26 Erasmus+ traineeship call?
+A: The eligible period is from 1 October 2025 to 30 September 2026.
+
+Q94: What is the application deadline for Erasmus+ traineeship mobility?
+A: The complete application with all mandatory attachments must be submitted at least 2 months before the start of mobility by email to erasmus@fri.uni-lj.si.
+
+Q95: What documents are required for Erasmus+ traineeship mobility?
+A: Students must submit a completed application form, an original signed and stamped Erasmus+ Learning Agreement for Traineeship, and a motivation letter of at least one and at most two pages.
+
+Q96: Can I do multiple Erasmus+ traineeships?
+A: Yes, but not with the same employer or organization. Each traineeship must last at least 2 months and no more than 6 months.
+
+Q97: Which UL FRI Erasmus+ partner universities are listed in Germany?
+A: The listed German partner institutions are Technical University of Berlin, University of Bremen, Darmstadt University of Technology, Dresden University of Technology, and Albert Ludwig University of Freiburg.
+
+Q98: I am interested in cybersecurity or security-related exchange options in EU. Which partner universities should I check?
+A: Based on the available data, the strongest places to check first are NTNU, Reykjavík University, University of Tartu, TU Berlin, and TU Graz. NTNU is explicitly relevant for Information Security and related ICT fields. Reykjavík University lists Cyber Security as one of its Computer Science MSc emphasis lines. University of Tartu lists cyber security, secure programming, cryptography and verification, distributed systems, and artificial intelligence among relevant areas. TU Berlin lists security among potentially relevant Computer Science fields. TU Graz lists security among Computer Science-related areas. The student should still verify current course availability, language, semester, prerequisites, and exchange-student eligibility in the official course catalogue, then confirm recognition through the Learning Agreement.
+
+Q99: If I complete only 18 out of 30 ECTS during one Erasmus+ semester, what happens?
+A: Since 18 ECTS is below the 20 ECTS minimum required for one semester, Erasmus+ financial support may be limited to 3 months. The completed courses may still be recognized if they match the study programme and the Learning Agreement, but recognition depends on content similarity and home faculty approval. The student should contact the FRI coordinator as soon as possible.
+
+Q100: Can I rely on the assistant to decide whether a specific foreign course replaces a specific FRI course?
+A: No. The assistant can help locate course catalogues, explain the Learning Agreement procedure, and summarize known rules, but final recognition must be approved through the Learning Agreement by the relevant UL FRI and host institution coordinators. Course availability and equivalence can change by semester and must be verified in official catalogues.

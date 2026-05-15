@@ -1,0 +1,60 @@
+INSTITUTION: University of Tartu
+COUNTRY: Estonia
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Incoming exchange, English-taught courses, Computer Science courses.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- University of Tartu exchange students:
+  https://ut.ee/en/exchange-students
+- University of Tartu courses taught in English and grading:
+  https://ut.ee/en/courses-taught-english-and-grading
+- University of Tartu Computer Science master's programme:
+  https://ut.ee/en/curriculum/computer-science
+- University of Tartu Institute of Computer Science courses:
+  https://courses.cs.ut.ee/
+- University of Tartu Study Information System:
+  https://ois2.ut.ee/
+
+EXCHANGE STUDENT COURSE SELECTION
+
+The University of Tartu offers international students English-taught courses in different disciplines. International visiting students register for courses through the Study Information System (SIS) within the first two weeks of the semester.
+
+Course information is available through the University of Tartu course systems and Study Information System.
+
+COMPUTER SCIENCE RELEVANCE
+
+The University of Tartu has a strong Computer Science profile. Its Computer Science master's programme includes specializations such as:
+- cryptography and verification,
+- distributed systems,
+- artificial intelligence.
+
+Other relevant topics may include:
+- data mining,
+- data science,
+- parallel computing,
+- cloud computing,
+- cyber security,
+- secure programming,
+- software engineering,
+- and theoretical computer science.
+
+Exchange students should use the official course information systems to check the current English-taught courses and whether they are available to international visiting students.
+
+IMPORTANT LIMITATIONS
+
+Course availability depends on:
+- semester,
+- language of instruction,
+- prerequisites,
+- whether the course is open to international visiting students,
+- and the Study Information System registration process.
+
+Students must register for courses in the SIS after receiving their University of Tartu credentials.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about Tartu, the assistant should recommend checking the official University of Tartu English-taught course list, the Study Information System, and the Institute of Computer Science course pages.
+
+Example answer:
+“University of Tartu is a strong option for Computer Science topics such as AI, distributed systems, cryptography, cyber security, and data science. You should verify current English-taught courses in the University of Tartu SIS and include approved choices in your Learning Agreement.”

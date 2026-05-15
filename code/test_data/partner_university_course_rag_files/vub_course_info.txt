@@ -1,0 +1,53 @@
+INSTITUTION: Vrije Universiteit Brussel (VUB)
+COUNTRY: Belgium
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Incoming exchange, Computer Science courses, Applied Computer Science exchange.
+SOURCE TYPE: Official university pages and official VUB course/curriculum pages.
+
+OFFICIAL SOURCES
+- VUB incoming exchange students:
+  https://www.vub.be/en/internationalisation-vub/international-relations-what-we-do-how-you-can-reach-us/exchange-erasmus-projects/come-vub-exchange
+- VUB Computer Science exchange information:
+  https://www.vub.be/en/studying-vub/all-study-programmes-vub/personal-development-during-your-studies/studying-abroad/eu-destinations-erasmus-exchange-for-vub-students/erasmus-and-exchange-for-vub-computer-science-students
+- VUB Applied Computer Science exchange information:
+  https://www.vub.be/en/studying-vub/all-study-programmes-vub/personal-development-during-your-studies/studying-abroad/eu-destinations-erasmus-exchange-for-vub-students/erasmus-and-exchange-for-vub-applied-computer-science-studen
+- VUB Computer Science programme / curriculum pages:
+  https://caliweb.vub.be/
+
+EXCHANGE STUDENT COURSE SELECTION
+
+VUB states that incoming exchange students need an agreement between their home university and VUB. During exchange, students take courses at VUB, so they must check the course offer and discuss the study plan with their coordinator.
+
+For Computer Science students, VUB provides exchange-specific information and course/curriculum pages.
+
+COMPUTER SCIENCE RELEVANCE
+
+VUB is relevant for Computer Science and Applied Computer Science exchange. Relevant areas may include:
+- artificial intelligence,
+- data analytics,
+- multimedia,
+- software engineering,
+- computer science,
+- applied computer science,
+- and related technical subjects.
+
+Some VUB Computer Science curriculum pages list course options specifically for incoming Master students in Computer Science.
+
+IMPORTANT REQUIREMENTS AND LIMITATIONS
+
+Students should check:
+- whether their home university has an agreement with VUB;
+- which Computer Science courses are available for incoming exchange students;
+- the language of instruction;
+- semester availability;
+- prerequisites;
+- and ECTS requirements.
+
+VUB information sheets may require incoming students to take a minimum number of VUB ECTS per semester, so students should verify current requirements before applying.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about VUB, the assistant should direct them to VUB incoming exchange pages and the Computer Science course/curriculum pages.
+
+Example answer:
+“VUB offers Computer Science-related exchange options and has official pages for incoming exchange students. You should check the current VUB course offer, especially Computer Science exchange pages, and confirm your course choices with the UL FRI coordinator through the Learning Agreement.”

@@ -1,0 +1,58 @@
+INSTITUTION: Graz University of Technology (TU Graz)
+COUNTRY: Austria
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Exchange course selection, Learning Agreement, Computer Science-related course search.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- TU Graz exchange overview:
+  https://www.tugraz.at/en/studying-and-teaching/studying-internationally/incoming-students-exchange-at-tu-graz/overview-exchange-at-tu-graz
+- TU Graz course selection and Learning Agreement:
+  https://www.tugraz.at/en/studying-and-teaching/studying-internationally/incoming-students-exchange-at-tu-graz/course-selection-and-learning-agreement
+- TU Graz online course catalogue:
+  https://online.tugraz.at/tug_online/webnav.ini
+- TU Graz English-taught course search:
+  https://online.tugraz.at/tug_online/wbENLVSuche.wbEnLvSuchePage
+
+EXCHANGE STUDENT COURSE SELECTION
+
+Incoming exchange students at TU Graz are expected to choose courses and prepare a Learning Agreement after their exchange application has been approved.
+
+The Learning Agreement is an agreement between:
+- the student,
+- the home university,
+- and TU Graz.
+
+The Learning Agreement defines which courses the student intends to take during the exchange and is used for later recognition at the home institution.
+
+RETRIEVAL-RELEVANT NOTES FOR STUDENTS
+
+Students should:
+- check TU Graz course availability before preparing the Learning Agreement;
+- use TU Graz online course systems to search for suitable courses;
+- verify the teaching language of each course;
+- check whether courses are offered in the correct semester;
+- confirm course suitability with the home coordinator before finalizing the Learning Agreement.
+
+COMPUTER SCIENCE RELEVANCE
+
+TU Graz offers Computer Science-related study options and courses. The official course catalogue and English course search should be used to identify current courses in areas such as:
+- computer science,
+- software engineering,
+- artificial intelligence,
+- data science,
+- information systems,
+- algorithms,
+- security,
+- and related technical fields.
+
+IMPORTANT LIMITATION
+
+Course availability may change by semester. The assistant should not guarantee that a specific course will be available unless the current TU Graz course catalogue confirms it.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks whether a specific TU Graz course can replace a UL FRI course, the assistant should say that this must be confirmed through the Learning Agreement process and approved by the UL FRI coordinator.
+
+Example answer:
+“TU Graz has official course search systems for exchange students. You should check the current TU Graz course catalogue and English-taught course search, then include suitable courses in your Learning Agreement for approval by the UL FRI coordinator.”

@@ -1,0 +1,55 @@
+INSTITUTION: Reykjavík University
+COUNTRY: Iceland
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Exchange students, course catalogue, Computer Science MSc.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- Reykjavík University course catalogue:
+  https://www.ru.is/en/namid/um-namid/kennsluskra
+- Reykjavík University International Office:
+  https://www.ru.is/en/namid/nemandinn/althjodaskrifstofa
+- Reykjavík University Computer Science MSc:
+  https://www.ru.is/en/departments/dcs/tolvunarfraedi-msc
+- Reykjavík University Department of Computer Science:
+  https://www.ru.is/en/departments/dcs
+
+EXCHANGE STUDENT COURSE SELECTION
+
+Reykjavík University welcomes exchange students for one or two semesters and offers a selection of courses taught in English.
+
+Students should use the official Reykjavík University course catalogue to search for current courses and verify course language, semester availability, prerequisites, and department restrictions.
+
+COMPUTER SCIENCE RELEVANCE
+
+Reykjavík University offers a Computer Science MSc taught in English. The programme allows students to customize their studies and includes emphasis lines such as:
+- Artificial Intelligence,
+- Cyber Security,
+- Software Engineering.
+
+The Department of Computer Science works in fields including:
+- artificial intelligence,
+- databases,
+- software theory,
+- language technology,
+- user interfaces,
+- theoretical computer science.
+
+IMPORTANT LIMITATIONS
+
+Reykjavík University states that thesis work may not be available to exchange students unless a special thesis collaboration agreement exists.
+
+Course availability depends on:
+- semester,
+- department,
+- level,
+- prerequisites,
+- exchange-student eligibility,
+- and Learning Agreement approval.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about Reykjavík University, the assistant should explain that RU offers English-taught exchange courses and has strong Computer Science areas, but the student must verify current course availability in the official RU course catalogue.
+
+Example answer:
+“Reykjavík University can be relevant for students interested in AI, cyber security, and software engineering. Check the official RU course catalogue for current English-taught courses and confirm recognition through the UL FRI Learning Agreement.”

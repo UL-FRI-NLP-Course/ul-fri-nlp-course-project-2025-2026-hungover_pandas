@@ -1,0 +1,62 @@
+INSTITUTION: Technische Universität Berlin (TU Berlin)
+COUNTRY: Germany
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Exchange course catalogue, Computer Science MSc, module database.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- TU Berlin support for exchange students:
+  https://www.tu.berlin/en/international/students-1/international-students/exchange-studies-at-tu-berlin
+- TU Berlin information about courses for exchange students:
+  https://www.tu.berlin/en/international/students-1/international-students/exchange-studies-at-tu-berlin/studying-at-tu-berlin/information-about-courses
+- TU Berlin central module database information:
+  https://www.tu.berlin/en/qu/study-and-teaching/modules
+- TU Berlin Computer Science M.Sc. programme:
+  https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/computer-science-informatik-m-sc
+- TU Berlin Faculty IV Computer Science M.Sc. page:
+  https://www.tu.berlin/en/eecs/academics-teaching/study-offer/masters-programs/msc-computer-science-informatik
+
+EXCHANGE STUDENT COURSE SELECTION
+
+TU Berlin provides information for students from partner universities who want to apply for exchange studies.
+
+The official course catalogue for a specific exchange semester is usually published only about one month before the semester starts. Therefore, a Learning Agreement or study plan may be based on previous course catalogues, but final course availability cannot be guaranteed in advance.
+
+TU Berlin module descriptions are available through the central module database MOSES. Students can use it to search for module descriptions and module lists.
+
+COMPUTER SCIENCE RELEVANCE
+
+TU Berlin offers a Computer Science M.Sc. programme. The master's programme is taught in English and covers broad areas of computer science. This makes TU Berlin especially relevant for UL FRI master students looking for English-taught Computer Science courses.
+
+Potentially relevant fields include:
+- algorithms,
+- software systems,
+- data science,
+- artificial intelligence,
+- distributed systems,
+- security,
+- theoretical computer science,
+- and other Computer Science electives.
+
+IMPORTANT LIMITATIONS
+
+Course availability for exchange students depends on:
+- the semester,
+- current course catalogue,
+- module capacity,
+- language of instruction,
+- prerequisites,
+- and approval by the home and host coordinators.
+
+The assistant should not claim that a specific TU Berlin course is available in a future semester unless the current official course catalogue confirms it.
+
+SAFE ANSWER BEHAVIOR
+
+If asked about TU Berlin courses, the assistant should direct the student to:
+- TU Berlin exchange course information page,
+- TU Berlin course catalogue,
+- MOSES module database,
+- and UL FRI Learning Agreement approval.
+
+Example answer:
+“TU Berlin is a strong option for Computer Science exchange, especially at master level. However, its course catalogue for an exchange semester is usually published close to the semester start, so you should verify current courses in the official TU Berlin catalogue/MOSES and confirm recognition through the Learning Agreement.”

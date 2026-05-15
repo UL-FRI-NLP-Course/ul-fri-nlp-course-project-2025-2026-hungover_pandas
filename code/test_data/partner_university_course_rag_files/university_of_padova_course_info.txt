@@ -1,0 +1,46 @@
+INSTITUTION: University of Padova (University of Padua)
+COUNTRY: Italy
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Course catalogue, Erasmus course selection, Computer Engineering/Computer Systems Engineering.
+SOURCE TYPE: Official university pages and official Erasmus factsheet references.
+
+OFFICIAL SOURCES
+- University of Padova course catalogue:
+  https://www.unipd.it/en/course-catalogue
+- University of Padova Computer Systems Engineering course catalogue entry:
+  https://unipd.coursecatalogue.cineca.it/corsi-code/2025/IN2547?linguaCC=EN
+
+EXCHANGE STUDENT COURSE SELECTION
+
+Exchange students should use the University of Padova course catalogue to search for course units. Official Erasmus guidance indicates that exchange students should carefully read instructions on how to choose courses, browse the course catalogue, complete the Learning Agreement, and understand restrictions on course units.
+
+Some course catalogue entries may indicate whether a course unit can be attended by Erasmus+ and other exchange students.
+
+COMPUTER SCIENCE / COMPUTER ENGINEERING RELEVANCE
+
+The University of Padova offers English-taught Computer Systems Engineering at master level. This programme is relevant for UL FRI students interested in:
+- computer engineering,
+- computer systems,
+- software and hardware systems,
+- information engineering,
+- data systems,
+- and related technical courses.
+
+The Computer Systems Engineering programme is a 2-year master's degree with 120 ECTS and English as the language of instruction.
+
+IMPORTANT LIMITATIONS
+
+Course catalogue entries must be checked for:
+- semester,
+- teaching language,
+- exchange-student eligibility,
+- prerequisites,
+- department restrictions,
+- and whether the course is compatible with UL FRI recognition.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about Padova courses, the assistant should direct them to the official University of Padova course catalogue and remind them to check whether a course is open to Erasmus/exchange students.
+
+Example answer:
+“University of Padova has an official course catalogue and English-taught Computer Systems Engineering at master level. For Erasmus planning, check the catalogue entry, confirm whether the course is open to exchange students, and include it in your Learning Agreement for UL FRI approval.”

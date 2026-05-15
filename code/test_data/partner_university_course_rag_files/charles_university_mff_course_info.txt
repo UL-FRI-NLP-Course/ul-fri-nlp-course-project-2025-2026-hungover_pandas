@@ -1,0 +1,64 @@
+INSTITUTION: Charles University, Faculty of Mathematics and Physics (MFF)
+COUNTRY: Czech Republic
+UL FRI PARTNER STATUS: Listed as UL FRI Erasmus+ partner institution.
+TOPIC: Exchange programmes, Computer Science study guide, English-taught Computer Science courses.
+SOURCE TYPE: Official university pages.
+
+OFFICIAL SOURCES
+- Charles University MFF exchange programmes:
+  https://www.mff.cuni.cz/en/students/exchange-programmes
+- Charles University MFF programmes:
+  https://www.mff.cuni.cz/en/admissions/programmes
+- Charles University MFF Computer Science bachelor:
+  https://www.mff.cuni.cz/en/students/bachelor-of-computer-science
+- Charles University MFF Computer Science master:
+  https://www.mff.cuni.cz/en/students/master-of-computer-science
+- Charles University course information system:
+  https://is.cuni.cz/studium/eng/predmety/
+
+EXCHANGE STUDENT COURSE SELECTION
+
+The Faculty of Mathematics and Physics supports exchange programmes for students in computer science, mathematics, and physics.
+
+Students should use official MFF pages and the Charles University course information system to search for courses, check study guides, and verify course availability.
+
+COMPUTER SCIENCE RELEVANCE
+
+Charles University MFF offers Computer Science programmes and degree plans in areas such as:
+- General Computer Science,
+- Databases and Web,
+- Artificial Intelligence,
+- Discrete Models and Algorithms,
+- Theoretical Computer Science,
+- Software and Data Engineering,
+- Software Systems,
+- Language Technologies and Computational Linguistics,
+- Visual Computing and Game Development.
+
+This makes Charles University especially relevant for UL FRI students interested in:
+- AI,
+- algorithms,
+- software engineering,
+- data engineering,
+- language technologies,
+- NLP,
+- visual computing,
+- and theoretical computer science.
+
+IMPORTANT LIMITATIONS
+
+Course availability and exchange access depend on:
+- semester,
+- department/faculty rules,
+- language of instruction,
+- prerequisites,
+- and Learning Agreement approval.
+
+Students should check the current Charles University course information system before finalizing the Learning Agreement.
+
+SAFE ANSWER BEHAVIOR
+
+If a student asks about Charles University courses, the assistant should direct them to the MFF exchange programmes page, Computer Science study pages, and official course information system.
+
+Example answer:
+“Charles University MFF is a strong Computer Science partner, with areas such as AI, software and data engineering, language technologies, and theoretical computer science. Course availability must be checked in the official Charles University course information system and approved through the Learning Agreement.”

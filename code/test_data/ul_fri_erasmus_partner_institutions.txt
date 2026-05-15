@@ -1,0 +1,396 @@
+UL FRI ERASMUS+ PARTNER INSTITUTIONS
+Academic year: 2026/27
+Source: UL FRI Erasmus Office
+Last updated: May 2026
+
+This document contains Erasmus+ partner institutions available to students of the Faculty of Computer and Information Science (UL FRI).
+
+For each institution, the following information is provided:
+- institution name
+- Erasmus code
+- country
+- number of students accepted per academic year
+- mobility duration in months per student
+- study levels:
+  1 = Bachelor
+  2 = Master
+  3 = PhD
+
+GENERAL NOTES
+
+Study is generally conducted in the language of the host country, especially at Bachelor level. Some institutions also offer courses and exams in English.
+
+Students should carefully check:
+- the institution’s website,
+- course catalogs,
+- language requirements,
+- and whether the institution offers courses relevant to their study programme before applying.
+
+Some institutions may require:
+- a signed bilateral agreement,
+- or available free places for mobility.
+
+--------------------------------------------------
+AUSTRIA
+--------------------------------------------------
+
+Graz University of Technology
+Erasmus code: A GRAZ02
+Country: Austria
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+BELGIUM
+--------------------------------------------------
+
+Vrije Universiteit Brussel – Faculty of Sciences and Bioengineering Sciences
+Erasmus code: B BRUSSEL01
+Country: Belgium
+Available places: 4 students
+Duration: 10 months per student
+Study levels:
+- Bachelor: 2 students
+- Master: 1 student
+- PhD: 1 student
+
+--------------------------------------------------
+CZECH REPUBLIC
+--------------------------------------------------
+
+Pardubice University – Faculty of Electrical Engineering and Informatics
+Erasmus code: CZ PARDUB01
+Country: Czech Republic
+Available places: 3 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+Charles University in Prague – Faculty of Mathematics and Physics, Computer Science Institute
+Erasmus code: CZ PRAHA07
+Country: Czech Republic
+Available places: 2 students
+Duration: 9 months per student
+Study levels: Bachelor, Master, PhD
+
+Note:
+Study exchange is possible only if a bilateral agreement with the partner institution is signed.
+
+Czech Technical University – Faculty of Information Technology
+Erasmus code: CZ PRAHA10
+Country: Czech Republic
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+ESTONIA
+--------------------------------------------------
+
+University of Tartu – Faculty of Science and Technology
+Erasmus code: EE TARTU02
+Country: Estonia
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+FINLAND
+--------------------------------------------------
+
+University of Tampere – School of Information Sciences
+Erasmus code: SF TAMPERE01
+Country: Finland
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+FRANCE
+--------------------------------------------------
+
+CY Cergy Paris Université
+Erasmus code: F CERGYP11
+Country: France
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+INSA Lyon – National Institute of Science and Technology
+Erasmus code: F LYON12
+Country: France
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+GREECE
+--------------------------------------------------
+
+University of Piraeus – School of Information and Communication Technologies, Department of Informatics
+Erasmus code: G PIREAS01
+Country: Greece
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+ICELAND
+--------------------------------------------------
+
+Reykjavík University – School of Computer Science
+Erasmus code: IS REYKJAV05
+Country: Iceland
+Available places: 1 student
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+ITALY
+--------------------------------------------------
+
+University of Cagliari – Department of Electric and Electronic Engineering
+Erasmus code: I CAGLIAR01
+Country: Italy
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Catania – Department of Electronic Electrical Engineering and Informatics
+Erasmus code: I CATANIA01
+Country: Italy
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Padova – Department of Information Engineering
+Erasmus code: I PADOVA01
+Country: Italy
+Available places: 3 students
+Duration: 10 months per student
+Study levels: Master, PhD
+
+University of Pavia – Faculty of Engineering, Department of Electrical, Computer and Biomedical Engineering
+Erasmus code: I PAVIA01
+Country: Italy
+Available places: 3 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Sapienza University of Rome – Faculty of Information Engineering, Informatics and Statistics
+Erasmus code: I ROMA01
+Country: Italy
+Available places: 1 student
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Udine – Department of Mathematics, Computer Science and Physics
+Erasmus code: I UDINE01
+Country: Italy
+Available places: 1 student
+Duration: 6 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+LITHUANIA
+--------------------------------------------------
+
+Kaunas University of Technology – Faculty of Informatics
+Erasmus code: LT KAUNAS02
+Country: Lithuania
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Vilnius University – Faculty of Mathematics and Informatics
+Erasmus code: LT VILNIUS01
+Country: Lithuania
+Available places: 1 student
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+HUNGARY
+--------------------------------------------------
+
+University of Pecs – Faculty of Sciences
+Erasmus code: HU PECS01
+Country: Hungary
+Available places: 5 students
+Duration: 10 months per student
+Study levels:
+- Bachelor: 1 student
+- Master: 1 student
+- PhD: 3 students
+
+--------------------------------------------------
+GERMANY
+--------------------------------------------------
+
+Technical University of Berlin – Faculty IV: Electrical Engineering and Computer Science
+Erasmus code: D BERLIN02
+Country: Germany
+Available places: 5 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Bremen – Faculty 03: Mathematics and Computer Science
+Erasmus code: D BREMEN01
+Country: Germany
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+Darmstadt University of Technology
+Erasmus code: D DARMSTA01
+Country: Germany
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Dresden University of Technology – Faculty of Computer Science
+Erasmus code: D DRESDEN02
+Country: Germany
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Albert Ludwig University of Freiburg – Faculty of Engineering, Department of Computer Science
+Erasmus code: D FREIBUR01
+Country: Germany
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+NORWAY
+--------------------------------------------------
+
+Norwegian University of Science and Technology
+Erasmus code: N TRONDHE01
+Country: Norway
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Master, PhD
+
+--------------------------------------------------
+POLAND
+--------------------------------------------------
+
+Warsaw University of Technology – Faculty of Electronics and Information Technology
+Erasmus code: PL WARSZAW02
+Country: Poland
+Available places: 2 students
+Duration: 6 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+PORTUGAL
+--------------------------------------------------
+
+University of Coimbra – Faculty of Sciences and Technology, Informatics Engineering Department
+Erasmus code: P COIMBRA01
+Country: Portugal
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Porto – Faculty of Sciences
+Erasmus code: P PORTO02
+Country: Portugal
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+CROATIA
+--------------------------------------------------
+
+University of Rijeka – Faculty of Engineering
+Erasmus code: HR RIJEKA01
+Country: Croatia
+Available places: 5 students
+Duration: 5 months per student
+Study levels: PhD only
+
+University of Zagreb – Faculty of Electrical Engineering and Computing
+Erasmus code: HR ZAGREB01
+Country: Croatia
+Available places: 3 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+SERBIA
+--------------------------------------------------
+
+University of Belgrade – Faculty of Electrical Engineering
+Erasmus code: RS BELGRAD02
+Country: Serbia
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Novi Sad – Faculty of Sciences
+Erasmus code: RS NOVISAD02
+Country: Serbia
+Available places: 1 student
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+University of Novi Sad – Faculty of Technical Sciences
+Erasmus code: RS NOVISAD02
+Country: Serbia
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+ROMANIA
+--------------------------------------------------
+
+Babeș-Bolyai University – Faculty of Mathematics and Computer Science
+Erasmus code: RO CLUJNAP01
+Country: Romania
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+SLOVAKIA
+--------------------------------------------------
+
+Technical University of Košice – Faculty of Electrical Engineering and Informatics
+Erasmus code: SK KOSICE03
+Country: Slovakia
+Available places: 2 students
+Duration: 10 months per student
+Study levels: Bachelor, Master, PhD
+
+--------------------------------------------------
+SWEDEN
+--------------------------------------------------
+
+University of Gothenburg – IT Faculty
+Erasmus code: S GOTEBOR01
+Country: Sweden
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Luleå University of Technology – Department of Computer Science and Electrical Engineering
+Erasmus code: S LULEA01
+Country: Sweden
+Available places: 2 students
+Duration: 5 months per student
+Study levels: Bachelor, Master, PhD
+
+Malmö University – Faculty of Technology and Society
+Erasmus code: S MALMO01
+Country: Sweden
+Available places: 5 students
+Duration: 5 months per student
+Study levels:
+- Bachelor: 2 students
+- Master: 2 students
+- PhD: 1 student
