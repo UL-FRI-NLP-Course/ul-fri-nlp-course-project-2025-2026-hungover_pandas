@@ -1,0 +1,745 @@
+Structure for each institution:
+
+* institution name
+* country
+* study levels
+* Erasmus relevance
+* typical Computer Science-related areas
+* exchange considerations
+* safe-answer behavior for the assistant
+
+The information is intended for retrieval grounding and should not replace official university course catalogues or Erasmus coordinators.
+
+⸻
+
+Pardubice University
+
+COUNTRY: Czech Republic
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Pardubice University is available as an Erasmus+ partner institution through the Faculty of Electrical Engineering and Informatics.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Information systems
+* Electrical engineering
+* Applied computing
+* Software systems
+
+IMPORTANT NOTES:
+Students should verify:
+
+* English-taught courses,
+* semester availability,
+* compatibility with UL FRI recognition,
+* and prerequisites.
+
+SAFE ANSWER:
+The assistant should direct students to the official Pardubice University course catalogue and recommend confirming course recognition through the Learning Agreement.
+
+⸻
+
+Czech Technical University (CTU Prague)
+
+COUNTRY: Czech Republic
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+CTU Prague Faculty of Information Technology is a strong technical Erasmus+ partner for Computer Science students.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Cyber security
+* Software engineering
+* Computer systems
+* Networking
+* Data science
+
+IMPORTANT NOTES:
+Students should carefully check:
+
+* English-taught courses,
+* mobility semester,
+* and exchange restrictions.
+
+SAFE ANSWER:
+The assistant should explain that CTU Prague is a strong Computer Science-oriented institution, but current course availability must be checked in the official catalogue.
+
+⸻
+
+University of Tampere
+
+COUNTRY: Finland
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+The University of Tampere is relevant for Computer Science and Information Sciences exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Human-computer interaction
+* Software development
+* Information systems
+* Data analysis
+* Digital technologies
+
+IMPORTANT NOTES:
+Students should check whether courses are offered in English and available to exchange students.
+
+SAFE ANSWER:
+The assistant should recommend checking the University of Tampere exchange course catalogue and verifying Learning Agreement compatibility.
+
+⸻
+
+CY Cergy Paris Université
+
+COUNTRY: France
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+CY Cergy Paris Université provides Erasmus+ exchange opportunities in France.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer science
+* Information technologies
+* Data systems
+* Applied informatics
+
+IMPORTANT NOTES:
+Bachelor-level study may primarily use French-language instruction.
+
+SAFE ANSWER:
+The assistant should remind students to verify English-taught courses and language requirements before applying.
+
+⸻
+
+INSA Lyon
+
+COUNTRY: France
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+INSA Lyon is a well-known engineering-focused institution suitable for technical Erasmus+ mobility.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Software engineering
+* Computer engineering
+* Artificial intelligence
+* Embedded systems
+* Information systems
+
+IMPORTANT NOTES:
+Students should check language requirements carefully because some programmes may require French proficiency.
+
+SAFE ANSWER:
+The assistant should explain that INSA Lyon is highly relevant for engineering and technical studies but that language and course restrictions must be verified.
+
+⸻
+
+University of Piraeus
+
+COUNTRY: Greece
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+The University of Piraeus Department of Informatics is relevant for ICT and informatics-focused exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* ICT systems
+* Networking
+* Information systems
+* Software technologies
+
+IMPORTANT NOTES:
+Students should confirm current English-taught offerings.
+
+SAFE ANSWER:
+The assistant should recommend checking the official exchange course information and confirming recognition through the Learning Agreement.
+
+⸻
+
+University of Cagliari
+
+COUNTRY: Italy
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Cagliari provides Erasmus+ mobility through electrical and electronic engineering departments.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer engineering
+* Embedded systems
+* Software systems
+* Information engineering
+
+IMPORTANT NOTES:
+Course availability may vary significantly by semester.
+
+SAFE ANSWER:
+The assistant should advise students to verify course language and compatibility with UL FRI requirements.
+
+⸻
+
+University of Catania
+
+COUNTRY: Italy
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Catania participates through engineering and informatics departments.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Information engineering
+* Software technologies
+* Data systems
+
+IMPORTANT NOTES:
+Students should check whether selected courses are open to Erasmus+ students.
+
+SAFE ANSWER:
+The assistant should direct students to official course catalogues and remind them that Learning Agreement approval is required.
+
+⸻
+
+University of Pavia
+
+COUNTRY: Italy
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Pavia is relevant for engineering and computing-focused exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer engineering
+* Biomedical informatics
+* Data systems
+* Embedded computing
+* Software engineering
+
+IMPORTANT NOTES:
+Exchange students should verify prerequisites and teaching language.
+
+SAFE ANSWER:
+The assistant should explain that the University of Pavia offers technical and engineering-oriented exchange opportunities but that course compatibility must be checked.
+
+⸻
+
+Sapienza University of Rome
+
+COUNTRY: Italy
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Sapienza University of Rome is a large Erasmus+ partner with Computer Science and Informatics opportunities.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Artificial intelligence
+* Data science
+* Information engineering
+* Computer systems
+
+IMPORTANT NOTES:
+Course language and semester availability should be verified in advance.
+
+SAFE ANSWER:
+The assistant should direct students to Sapienza course catalogues and Learning Agreement procedures.
+
+⸻
+
+University of Udine
+
+COUNTRY: Italy
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Udine participates through mathematics, computer science, and physics departments.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer science
+* Data analysis
+* Software systems
+* Algorithms
+
+IMPORTANT NOTES:
+Students should check whether English-taught courses are available for the chosen semester.
+
+SAFE ANSWER:
+The assistant should recommend verifying exchange course availability directly through official university systems.
+
+⸻
+
+Kaunas University of Technology
+
+COUNTRY: Lithuania
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Kaunas University of Technology is a strong technical university relevant for engineering and informatics exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Software engineering
+* Cyber security
+* Informatics
+* Data science
+
+IMPORTANT NOTES:
+Students should verify exchange eligibility and language of instruction.
+
+SAFE ANSWER:
+The assistant should explain that KTU is suitable for technical and Computer Science exchange but that current course information must be checked.
+
+⸻
+
+Vilnius University
+
+COUNTRY: Lithuania
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Vilnius University offers exchange opportunities in mathematics and informatics.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Artificial intelligence
+* Data science
+* Software systems
+
+IMPORTANT NOTES:
+Course selection depends on semester and faculty approval.
+
+SAFE ANSWER:
+The assistant should advise students to verify current English-taught course offerings before preparing the Learning Agreement.
+
+⸻
+
+University of Pecs
+
+COUNTRY: Hungary
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Pecs offers Erasmus+ opportunities through the Faculty of Sciences.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer science
+* Informatics
+* Information systems
+* Applied computing
+
+IMPORTANT NOTES:
+Different study-level quotas exist for Bachelor, Master, and PhD students.
+
+SAFE ANSWER:
+The assistant should explain that available places depend on study level and should be confirmed with UL FRI Erasmus coordinators.
+
+⸻
+
+University of Bremen
+
+COUNTRY: Germany
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Bremen is a relevant German partner for mathematics and computer science exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Robotics
+* Data systems
+* Software engineering
+* Theoretical computer science
+
+IMPORTANT NOTES:
+Students should verify English-language availability and exchange access.
+
+SAFE ANSWER:
+The assistant should recommend checking official course catalogues and programme descriptions before selecting Bremen.
+
+⸻
+
+Darmstadt University of Technology
+
+COUNTRY: Germany
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Darmstadt University of Technology is a highly technical institution relevant for advanced Computer Science exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Cyber security
+* Artificial intelligence
+* Distributed systems
+* Software engineering
+* Data science
+
+IMPORTANT NOTES:
+The university is known for strong technical programmes and may have demanding prerequisites.
+
+SAFE ANSWER:
+The assistant should explain that Darmstadt is highly relevant for advanced technical students but requires careful course and prerequisite verification.
+
+⸻
+
+Dresden University of Technology
+
+COUNTRY: Germany
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Dresden University of Technology is relevant for Computer Science and engineering-focused exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer science
+* Software systems
+* Artificial intelligence
+* Information systems
+
+IMPORTANT NOTES:
+Students should verify exchange course language and semester restrictions.
+
+SAFE ANSWER:
+The assistant should recommend checking the official TU Dresden course catalogue before preparing the Learning Agreement.
+
+⸻
+
+Albert Ludwig University of Freiburg
+
+COUNTRY: Germany
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+The University of Freiburg participates through Computer Science and engineering departments.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Machine learning
+* Robotics
+* Software engineering
+* Intelligent systems
+
+IMPORTANT NOTES:
+Students should verify current exchange access and course language.
+
+SAFE ANSWER:
+The assistant should explain that Freiburg is a relevant Computer Science exchange option but that current offerings must be checked directly.
+
+⸻
+
+Warsaw University of Technology
+
+COUNTRY: Poland
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Warsaw University of Technology is relevant for electronics, information technology, and Computer Science exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Information technology
+* Computer systems
+* Software engineering
+* Networking
+* Data systems
+
+IMPORTANT NOTES:
+Students should check programme language and prerequisites.
+
+SAFE ANSWER:
+The assistant should recommend checking official exchange pages and Learning Agreement compatibility.
+
+⸻
+
+University of Coimbra
+
+COUNTRY: Portugal
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Coimbra offers exchange opportunities through Informatics Engineering.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics engineering
+* Artificial intelligence
+* Data science
+* Software systems
+
+IMPORTANT NOTES:
+English-language course availability should be verified.
+
+SAFE ANSWER:
+The assistant should explain that Coimbra is suitable for Informatics-oriented exchange but requires official course verification.
+
+⸻
+
+University of Porto
+
+COUNTRY: Portugal
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Porto is a strong Erasmus+ partner for Computer Science and science-related exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Data systems
+* Software engineering
+* Computer science
+
+IMPORTANT NOTES:
+Students should check faculty-specific course restrictions.
+
+SAFE ANSWER:
+The assistant should recommend using official University of Porto exchange course systems before selecting courses.
+
+⸻
+
+University of Rijeka
+
+COUNTRY: Croatia
+STUDY LEVELS: PhD only
+
+RELEVANCE:
+University of Rijeka is available only for PhD-level mobility according to the dataset.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Engineering
+* Technical sciences
+* Computing-related research
+
+IMPORTANT NOTES:
+This mobility option is limited to doctoral students.
+
+SAFE ANSWER:
+The assistant should clearly state that Rijeka exchange is PhD-only according to the uploaded partner list.
+
+⸻
+
+University of Zagreb
+
+COUNTRY: Croatia
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Zagreb FER is one of the strongest regional technical partner institutions.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Software engineering
+* Computer engineering
+* Data science
+* Information systems
+
+IMPORTANT NOTES:
+High demand may affect exchange placement availability.
+
+SAFE ANSWER:
+The assistant should explain that FER Zagreb is highly relevant for Computer Science exchange and students should verify current course offerings.
+
+⸻
+
+University of Belgrade
+
+COUNTRY: Serbia
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Belgrade Faculty of Electrical Engineering is relevant for technical and Computer Science-related exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer engineering
+* Software systems
+* Electronics
+* Informatics
+
+IMPORTANT NOTES:
+Students should verify exchange compatibility and language requirements.
+
+SAFE ANSWER:
+The assistant should recommend checking faculty course catalogues and Erasmus exchange procedures.
+
+⸻
+
+University of Novi Sad – Faculty of Sciences
+
+COUNTRY: Serbia
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+The Faculty of Sciences provides informatics and computing-related Erasmus+ opportunities.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Data analysis
+* Software systems
+
+IMPORTANT NOTES:
+Course availability may differ between semesters.
+
+SAFE ANSWER:
+The assistant should direct students to official exchange pages and course catalogues.
+
+⸻
+
+University of Novi Sad – Faculty of Technical Sciences
+
+COUNTRY: Serbia
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+The Faculty of Technical Sciences is a strong technical partner institution.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Software engineering
+* Information systems
+* Artificial intelligence
+* Computer engineering
+
+IMPORTANT NOTES:
+Students should verify whether selected courses are available in English.
+
+SAFE ANSWER:
+The assistant should recommend checking official course systems and verifying Learning Agreement compatibility.
+
+⸻
+
+Babeș-Bolyai University
+
+COUNTRY: Romania
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Babeș-Bolyai University is relevant for mathematics and Computer Science-focused exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Artificial intelligence
+* Computer science
+* Software systems
+* Data science
+
+IMPORTANT NOTES:
+Course language and faculty requirements should be verified.
+
+SAFE ANSWER:
+The assistant should explain that Babeș-Bolyai offers relevant Computer Science exchange opportunities but that course availability changes by semester.
+
+⸻
+
+Technical University of Košice
+
+COUNTRY: Slovakia
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Technical University of Košice participates through Electrical Engineering and Informatics.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Informatics
+* Software engineering
+* Computer systems
+* Information technologies
+
+IMPORTANT NOTES:
+Students should verify exchange eligibility and English-language offerings.
+
+SAFE ANSWER:
+The assistant should direct students to official exchange information and Learning Agreement procedures.
+
+⸻
+
+University of Gothenburg
+
+COUNTRY: Sweden
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+University of Gothenburg IT Faculty provides exchange opportunities in IT and digital technologies.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Information technology
+* Software systems
+* Data systems
+* Human-computer interaction
+
+IMPORTANT NOTES:
+Students should verify current exchange course availability.
+
+SAFE ANSWER:
+The assistant should recommend checking official IT Faculty exchange pages and catalogues.
+
+⸻
+
+Luleå University of Technology
+
+COUNTRY: Sweden
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Luleå University of Technology is a technical university suitable for engineering and computing exchange.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Computer science
+* Artificial intelligence
+* Software engineering
+* Electrical engineering
+
+IMPORTANT NOTES:
+Semester and language restrictions may apply.
+
+SAFE ANSWER:
+The assistant should recommend checking official exchange systems before preparing the Learning Agreement.
+
+⸻
+
+Malmö University
+
+COUNTRY: Sweden
+STUDY LEVELS: Bachelor, Master, PhD
+
+RELEVANCE:
+Malmö University provides Erasmus+ opportunities through the Faculty of Technology and Society.
+
+COMPUTER SCIENCE-RELATED AREAS:
+
+* Software systems
+* Information technologies
+* Media technologies
+* Data systems
+
+IMPORTANT NOTES:
+Available places are distributed across Bachelor, Master, and PhD levels.
+
+SAFE ANSWER:
+The assistant should explain that exchange availability depends on study level quotas and current course offerings.

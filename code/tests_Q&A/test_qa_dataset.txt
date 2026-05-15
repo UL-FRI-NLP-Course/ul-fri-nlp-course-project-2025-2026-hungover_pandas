@@ -232,8 +232,8 @@ A: The student can contact the coordinator at the host institution, the Erasmus 
 Q77: What is the FRI Erasmus contact email?
 A: The FRI Erasmus contact email is erasmus@fri.uni-lj.si.
 
-Q78: What are the FRI Erasmus office hours listed in the dataset?
-A: The listed office hours are Monday from 10:00 to 11:00, online by Zoom or in office R3.03.
+Q78: What are the FRI Erasmus office hours?
+A: The office hours are Monday from 10:00 to 11:00, online by Zoom or in office R3.03.
 
 Q79: What visa or residence rule should the assistant follow for Erasmus+ questions?
 A: The assistant should explain that visa and residence requirements depend on citizenship, destination country, mobility duration, and national legislation. Students should verify information with the host institution, embassy or consulate, official government immigration portals, and Erasmus+ guidance resources.
@@ -298,5 +298,50 @@ A: Based on the available data, the strongest places to check first are NTNU, Re
 Q99: If I complete only 18 out of 30 ECTS during one Erasmus+ semester, what happens?
 A: Since 18 ECTS is below the 20 ECTS minimum required for one semester, Erasmus+ financial support may be limited to 3 months. The completed courses may still be recognized if they match the study programme and the Learning Agreement, but recognition depends on content similarity and home faculty approval. The student should contact the FRI coordinator as soon as possible.
 
-Q100: Can I rely on the assistant to decide whether a specific foreign course replaces a specific FRI course?
-A: No. The assistant can help locate course catalogues, explain the Learning Agreement procedure, and summarize known rules, but final recognition must be approved through the Learning Agreement by the relevant UL FRI and host institution coordinators. Course availability and equivalence can change by semester and must be verified in official catalogues.
+Q100: Where can I go on Erasmus+ exchange as an undergraduate student?
+A: Undergraduate students can apply to partner institutions such as TU Graz, VUB Brussels, Charles University MFF, CTU Prague, University of Tartu, University of Tampere, TU Berlin, University of Bremen, TU Dresden, University of Freiburg, Reykjavík University, University of Coimbra, University of Porto, University of Zagreb FER, Warsaw University of Technology, Kaunas University of Technology, Vilnius University, University of Belgrade, University of Novi Sad, Babeș-Bolyai University, Malmö University, and many other UL FRI Erasmus+ partner universities that support Bachelor-level mobility.
+
+Q101: Where can I go on Erasmus+ exchange as a master’s student?
+A: Master’s students can apply to institutions such as TU Berlin, TU Graz, NTNU, University of Tartu, Charles University MFF, Reykjavík University, University of Padova, VUB Brussels, Darmstadt University of Technology, University of Freiburg, University of Coimbra, University of Porto, University of Zagreb FER, Sapienza University of Rome, University of Pavia, and many other UL FRI partner institutions supporting Master-level mobility.
+
+Q102: Where can I go on Erasmus+ exchange as a doctoral student?
+A: Doctoral students can apply to Erasmus+ partner institutions that support PhD mobility, including TU Graz, VUB Brussels, Charles University MFF, CTU Prague, University of Tartu, TU Berlin, NTNU, Reykjavík University, University of Padova, University of Zagreb, University of Rijeka, Darmstadt University of Technology, University of Coimbra, University of Porto, and many other UL FRI partner institutions listed in the doctoral mobility call.
+
+Q103: What is the deadline for applying to an Erasmus+ exchange?
+A: For first-semester or full-year exchanges, the financial support deadline is 15 October 2026. For second-semester exchanges, the deadline is 15 March 2027. However, the application usually needs to be completed earlier because all documents must be finalized at least 10 working days before mobility starts.
+
+Q104: Are there Erasmus+ exchange opportunities in Paris?
+A: Yes. The available information lists CY Cergy Paris Université in France as an available Erasmus+ partner institution for Bachelor, Master, and PhD students.
+
+Q105: Are there Erasmus+ exchange opportunities in Switzerland?
+A: The available information does not list any UL FRI Erasmus+ partner institution in Switzerland for the current academic year. Students should check the latest official UL FRI Erasmus+ partner list or contact the Erasmus coordinator in case agreements change in future calls.
+
+Q106: What happens if I decide not to go on Erasmus+ exchange after being selected?
+A: If a student decides not to participate in Erasmus+ mobility, they should inform the University of Ljubljana Erasmus office, UL FRI, and the host institution as soon as possible. No cost or penalty will occur.
+
+Q107: I want to find an Erasmus+ exchange at a university focused on artificial intelligence and machine learning. Which institutions should I check?
+A: Relevant partner institutions include Charles University MFF, University of Tartu, Reykjavík University, TU Berlin, TU Graz, VUB Brussels, University of Freiburg, and NTNU.
+
+Q108: I want to find an Erasmus+ exchange at a university focused on cybersecurity or information security. Which institutions should I check?
+A: Relevant partner institutions include NTNU, Reykjavík University, University of Tartu, TU Berlin, TU Graz, Darmstadt University of Technology, and CTU Prague.
+
+Q109: I want to find an Erasmus+ exchange at a university focused on software engineering and distributed systems. Which institutions should I check?
+A: Relevant partner institutions include University of Tartu, TU Berlin, Charles University MFF, University of Padova, University of Porto, TU Graz, and Sapienza University of Rome.
+
+Q110: I want to find an Erasmus+ exchange at a university focused on data science, analytics, or big data. Which institutions should I check?
+A: Relevant partner institutions include VUB Brussels, University of Tartu, TU Berlin, Charles University MFF, University of Freiburg, University of Coimbra, and Reykjavík University.
+
+Q111: I want to find an Erasmus+ exchange at a university focused on theoretical computer science or algorithms. Which institutions should I check?
+A: Relevant partner institutions include Charles University MFF, TU Berlin, University of Tartu, University of Freiburg, CTU Prague, and NTNU.
+
+Q112: I want to find an Erasmus+ exchange at a university in Serbia with strong electrical engineering and computing programmes. Which institution should I check?
+A: A relevant partner institution is the University of Belgrade – Faculty of Electrical Engineering.
+
+Q113: Are there Erasmus+ exchange opportunities in North Macedonia?
+A: The available information does not list any UL FRI Erasmus+ partner institution in North Macedonia for the current academic year.
+
+Q114: How hard is it to be admitted to an Erasmus+ exchange programme?
+A: Admission difficulty depends on the number of available places, the popularity of the destination university, academic performance, motivation, language requirements, and whether the selected courses are compatible with the student’s study programme. Some universities only accept 1–2 students per year, making them more competitive.
+
+Q115: How many Erasmus+ places are available for Charles University in Prague?
+A: Charles University in Prague – Faculty of Mathematics and Physics, Computer Science Institute offers 2 Erasmus+ places with a mobility duration of 9 months per student for Bachelor, Master, and PhD students.
