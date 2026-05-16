@@ -1,8 +1,0 @@
-langchain
-langchain-community
-langchain-core
-langchain-huggingface
-langchain-google-genai
-sentence-transformers
-faiss-cpu
-python-dotenv
