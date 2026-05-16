@@ -182,7 +182,7 @@ Q60: What should I be careful about when searching for accommodation?
 A: Students should be cautious because online accommodation scams are common. They should not transfer money in advance without verified information and without properly checking the accommodation.
 
 Q61: Is OLS language assessment mandatory?
-A: In the UL financial support guidance, OLS is described as not mandatory but highly recommended. However, some Erasmus guidance documents still describe OLS as required for some mobility contexts. The safest answer is that students should follow the latest UL and host institution instructions since the requirement is dependent on chosen partner instituion and program.
+A: In the UL financial support guidance, OLS is described as not mandatory but highly recommended. Some host universities may still require language proof, so students should follow the latest UL and host institution instructions.
 
 Q62: Can the host university require a language certificate?
 A: Yes. Some host universities may require proof of language proficiency or certificates such as IELTS, TOEFL, Cambridge, or equivalent documents.
@@ -317,7 +317,7 @@ Q105: Are there Erasmus+ exchange opportunities in Switzerland?
 A: The available information does not list any UL FRI Erasmus+ partner institution in Switzerland for the current academic year. Students should check the latest official UL FRI Erasmus+ partner list or contact the Erasmus coordinator in case agreements change in future calls.
 
 Q106: What happens if I decide not to go on Erasmus+ exchange after being selected?
-A: If a student decides not to participate in Erasmus+ mobility, they should inform the University of Ljubljana Erasmus office, UL FRI, and the host institution as soon as possible. No cost or penalty will occur.
+A: If a student decides not to participate, they should inform the University of Ljubljana Erasmus office, UL FRI, and the host institution as soon as possible. The available information does not mention an automatic penalty, but late cancellation can affect administrative procedures and partner planning.
 
 Q107: I want to find an Erasmus+ exchange at a university focused on artificial intelligence and machine learning. Which institutions should I check?
 A: Relevant partner institutions include Charles University MFF, University of Tartu, Reykjavík University, TU Berlin, TU Graz, VUB Brussels, University of Freiburg, and NTNU.
@@ -345,3 +345,288 @@ A: Admission difficulty depends on the number of available places, the popularit
 
 Q115: How many Erasmus+ places are available for Charles University in Prague?
 A: Charles University in Prague – Faculty of Mathematics and Physics, Computer Science Institute offers 2 Erasmus+ places with a mobility duration of 9 months per student for Bachelor, Master, and PhD students.
+
+Q116: What GPA do I need to be accepted to TU Berlin?
+A: The available information does not state a fixed GPA requirement for TU Berlin. Students should check the current call conditions and contact the Erasmus coordinator if they want to know how applications are ranked.
+
+Q117: Which dormitory is the best for Erasmus students in Prague?
+A: This depends on personal preferences such as price, location, social atmosphere, and commute time. Students should compare official dormitory options, student reviews, and Erasmus student groups before deciding.
+
+Q118: How much money do I realistically need per month for Erasmus in Reykjavík?
+A: The Erasmus+ grant for Iceland is 674 EUR per month because Iceland is in Group 1. The available information does not state realistic monthly living costs, so students should check current housing and living-cost information before applying.
+
+Q119: Which Erasmus+ partner university is ranked the highest internationally?
+A: University rankings change regularly and depend on the ranking system and academic field. Students should check official rankings such as QS, THE, or Shanghai Ranking if international reputation is important to them.
+
+Q120: Will the exact same courses be available at TU Graz next year?
+A: Course availability can change every semester depending on scheduling, staff, and curriculum updates. Students should always verify the latest official course catalogue before finalizing the Learning Agreement.
+
+Q121: Can I legally work part-time during Erasmus+ mobility in Norway?
+A: Work regulations depend on citizenship, visa status, and Norwegian immigration rules. Students should check official immigration guidelines and visa conditions before planning employment abroad.
+
+Q122: How are grades converted from Charles University to UL FRI?
+A: Grade recognition and conversion are handled individually by the home institution according to recognition procedures and academic regulations. Students should consult the Erasmus coordinator for exact conversion rules.
+
+Q123: Which Erasmus+ destination is considered academically the easiest?
+A: Academic difficulty is highly subjective and depends on the student’s background, chosen courses, language skills, and study habits. Experiences can vary significantly even within the same university.
+
+Q124: Can I stay in Iceland after Erasmus+ if I find a job there?
+A: Residence and work rights after mobility depend on your citizenship and Icelandic immigration regulations. Students should consult official immigration authorities for accurate information.
+
+Q125: Does TU Berlin guarantee housing for Erasmus students?
+A: Housing availability changes each year and is usually limited. Students should apply for accommodation as early as possible and also prepare alternative housing options.
+
+Q126: Which university has the strongest AI research opportunities?
+A: Several partner institutions have strong AI-related programmes and research groups, but the best choice depends on the specific area of AI you are interested in, such as machine learning, NLP, robotics, or computer vision.
+
+Q127: Which Erasmus destination has the best student social life?
+A: Student experience depends on personal preferences, local culture, Erasmus community activity, accommodation type, and city size. Popular Erasmus cities usually have active international student communities and events.
+
+Q128: Will my Erasmus grades affect my final GPA at UL FRI?
+A: This depends on the faculty recognition process and programme regulations. Students should verify how completed courses and grades are recorded in their specific study programme.
+
+Q129: Which professors should I choose for machine learning courses at Charles University?
+A: Teaching staff and course assignments may change between semesters. Students should check the current faculty course pages, syllabi, and recent student experiences.
+
+Q130: What are my chances of being accepted for Erasmus+ mobility?
+A: Acceptance depends on factors such as available places, demand for specific destinations, academic performance, motivation, and whether your proposed study plan is realistic and compatible with your programme.
+
+Q131: Can I combine Erasmus+ funding with another scholarship?
+A: This depends on the rules of the other scholarship programme. Students should check whether external scholarships allow simultaneous Erasmus+ funding.
+
+Q132: Which countries have the simplest visa process for non-EU students?
+A: Visa procedures differ depending on nationality and destination country. Some countries may have faster or simpler procedures, but students should always consult official embassy and immigration information.
+
+Q133: Is the Erasmus+ grant enough to fully cover living costs in Sweden?
+A: In many cases, students need additional personal funds because living costs can exceed the Erasmus+ grant amount, especially in more expensive countries.
+
+Q134: Which Erasmus+ partner university is best for game development?
+A: Students interested in game development should compare available computer graphics, software engineering, multimedia, and game technology courses at different partner universities before applying.
+
+Q135: Can Erasmus+ mobility help me later move permanently to another country?
+A: Erasmus+ can provide international experience, language skills, academic contacts, and professional connections, but permanent relocation depends on immigration laws, employment opportunities, and residence regulations.
+
+Q136: If I complete 25 ECTS abroad, how many ECTS will be recognized at UL FRI?
+A: Recognition depends on the approved Learning Agreement, the completed courses, and how they match the UL FRI curriculum. Students should discuss recognition details with the Erasmus coordinator before mobility because course equivalence and ECTS recognition are decided individually.
+
+Q137: Which Erasmus+ partner university in Iceland is available for UL FRI students?
+A: The available partner institution in Iceland is Reykjavík University – School of Computer Science.
+
+Q138: How many Erasmus+ places are available at TU Berlin?
+A: Technical University of Berlin offers 5 Erasmus+ places with a duration of 10 months per student.
+
+Q139: Does University of Padova accept Bachelor students from UL FRI?
+A: No. According to the uploaded partner list, University of Padova is available only for Master and PhD students.
+
+Q140: Which Croatian partner university is available only for PhD students?
+A: University of Rijeka – Faculty of Engineering is available only for PhD-level mobility.
+
+Q141: What is the Erasmus code for Charles University in Prague?
+A: The Erasmus code for Charles University in Prague – Faculty of Mathematics and Physics is CZ PRAHA07.
+
+Q142: Which university in Sweden offers the highest number of Erasmus+ places?
+A: Malmö University offers 5 Erasmus+ places.
+
+Q143: Which partner universities are available in Serbia?
+A: The listed Serbian partner institutions are University of Belgrade – Faculty of Electrical Engineering, University of Novi Sad – Faculty of Sciences, and University of Novi Sad – Faculty of Technical Sciences.
+
+Q144: How long is the mobility duration for Charles University in Prague?
+A: The mobility duration for Charles University in Prague is 9 months per student.
+
+Q145: Which Italian partner university is available for only one Erasmus+ student?
+A: Sapienza University of Rome and University of Udine are each listed with 1 available Erasmus+ place.
+
+Q146: Which Erasmus+ partner universities are located in Portugal?
+A: The listed Portuguese partner institutions are University of Coimbra and University of Porto.
+
+Q147: Can I go on Erasmus+ exchange if I am repeating the second year of my Bachelor studies?
+A: It may still be possible, but eligibility depends on your study progress and faculty approval. You should discuss your situation with the Erasmus coordinator before applying.
+
+Q148: I have permanent residence in France. Can I still go on Erasmus+ exchange to France?
+A: In some cases this may still be possible, but the conditions can depend on your citizenship and Erasmus+ funding rules. You should check your specific situation with the Erasmus coordinator before applying.
+
+Q149: What is Erasmus+?
+A: Erasmus+ is a European programme that supports educational, professional, and personal development through mobility such as study exchange and traineeships abroad.
+
+Q150: Can I use Erasmus+ only for study, or also for traineeship?
+A: Erasmus+ can be used for study exchange and also for practical traineeship mobility, if the student meets the conditions of the relevant call.
+
+Q151: Where do I send questions about Erasmus+ at UL FRI?
+A: You can contact the UL FRI Erasmus office at erasmus@fri.uni-lj.si.
+
+Q152: Can I go on Erasmus+ for only one month?
+A: For regular Erasmus+ study mobility, the minimum duration is 2 full months, or 60 days. Shorter physical mobility is possible only in specific formats such as short-term doctoral or blended mobility.
+
+Q153: Can doctoral students go abroad for less than two months?
+A: Yes. Short-term doctoral mobility can last between 5 and 30 days and may include study obligations, research work, practical training, or doctoral thesis preparation.
+
+Q154: Can I apply for Erasmus+ doctoral mobility after June 2027?
+A: The listed doctoral mobility call covers the period from 1 June 2026 to 30 June 2027, or until funding is exhausted. For later mobility, students should check the next official call.
+
+Q155: Is practical training abroad possible after graduation?
+A: It may be possible, but the application must be submitted at least 2 months before the expiration of student status and before the thesis defense.
+
+Q156: What do I need to submit for an Erasmus+ traineeship?
+A: You need a completed application form, a signed and stamped Erasmus+ Learning Agreement for Traineeship, and a motivation letter of one to two pages.
+
+Q157: Can my traineeship motivation letter be in Slovenian?
+A: Yes. The traineeship call states that the motivation letter may be written in Slovenian.
+
+Q158: How long can one Erasmus+ traineeship last?
+A: Each traineeship must last at least 2 months and at most 6 months.
+
+Q159: Can I do more than one Erasmus+ traineeship?
+A: Yes, but the traineeships cannot be with the same employer or organization, and each one must meet the duration requirements.
+
+Q160: Do I need          insurance for Erasmus+?
+A: Yes. Students should make sure they have health insurance coverage for their stay abroad. For traineeships, liability and accident insurance may also be needed.
+
+Q161: Do I keep my Slovenian student grants or loans while abroad?
+A: According to the Erasmus Student Charter, students are entitled to continue receiving the same student grants or loans from their sending country while abroad.
+
+Q162: What should I do if I want to extend my Erasmus+ stay?
+A: You should submit the extension request to your sending institution at least one month before the end of the originally planned mobility period.
+
+Q163: Can I change courses after arriving at the host university?
+A: Yes. If a course is not available, overlaps with another course, or is not offered in the expected language, the Learning Agreement may be changed within the allowed deadline and approved by the relevant parties.
+
+Q164: What is Table A in the Learning Agreement?
+A: Table A lists the courses or academic components that the student plans to complete at the receiving institution abroad.
+
+Q165: What is Table B in the Learning Agreement?
+A: Table B lists the courses or components at the sending institution that will be replaced or recognized after successful completion abroad.
+
+Q166: Do courses abroad need to match FRI courses one-to-one?
+A: Not necessarily. The Learning Agreement guidance says there does not need to be a strict one-to-one correspondence; a group of learning outcomes abroad can replace a group of learning outcomes at the sending institution.
+
+Q167: What happens if I add more courses abroad than required for my degree?
+A: Additional courses or credits should still be listed in the study programme in Table A of the Learning Agreement.
+
+Q168: Can thesis research be included in the Learning Agreement?
+A: Yes. Thesis research or doctoral work can be included as a component in the Learning Agreement, depending on the mobility type and approval.
+
+Q169: What is automatic recognition?
+A: Automatic recognition means that credits successfully completed abroad according to the Learning Agreement are transferred and counted toward the student’s degree without additional work or assessment.
+
+Q170: What if automatic recognition is marked “No”?
+A: If automatic recognition is not applied, a clear justification should be provided, together with an explanation of what kind of formal recognition will be used instead.
+
+Q171: What is the European Student Identifier?
+A: The European Student Identifier is a unique European identifier used to identify and authenticate students when using Erasmus+ digital tools such as the Erasmus+ Mobile App or Online Learning Agreement.
+
+Q172: What study cycles are used in Erasmus+ documents?
+A: Erasmus+ documents use study cycles such as Bachelor or first cycle, Master or second cycle, and Doctorate or third cycle.
+
+Q173: Does the receiving university have to confirm that my selected courses are available?
+A: Yes. By approving the Learning Agreement, the receiving institution confirms that the listed educational components are in line with its course catalogue or otherwise agreed and should be available to the student.
+
+Q174: What should I do if I do not know the exact start and end dates of my exchange?
+A: You should enter the most accurate possible dates and verify the actual mobility duration, because incorrect dates may lead to returning excess funds.
+
+Q175: Does my travel day count as the first day of Erasmus+ mobility?
+A: No. The first day is the first day you must be present at the host institution, such as the first lecture, welcome event, or required language/intercultural course.
+
+Q176: Does my departure day count as the last day of mobility?
+A: No. The last day is the last day you must be present at the host institution, such as the final lecture or exam.
+
+Q177: Can virtual mobility be funded by Erasmus+?
+A: The virtual part of combined mobility is not funded by Erasmus+ and does not count toward the Erasmus+ status quota.
+
+Q178: Can I receive green travel support before departure?
+A: Students initially receive the standard travel amount before mobility. The difference up to the green travel amount is granted after mobility if the student proves eligible green travel.
+
+Q179: If I travel by plane one way and train the other way, is that green travel?
+A: Green travel requires that more than 50% of the journey to and from the mobility destination is completed using low-emission transport. The student should keep proof and verify whether the journey meets the requirement.
+
+Q180: Can I use GoOpti as green travel?
+A: Yes. Shared transport such as GoOpti is listed as a possible green means of transport.
+
+Q181: Can I use my own car as green travel?
+A: No. Cars, including carpooling, are not considered green means of transport in the provided guidance.
+
+Q182: I am going to Germany. How much monthly Erasmus+ grant do I get?
+A: Germany is in Group 1, so the monthly Erasmus+ grant for 2026/27 is 674 EUR.
+
+Q183: I am going to Spain. How much monthly Erasmus+ grant do I get?
+A: Spain is in Group 2, so the monthly Erasmus+ grant for 2026/27 is 606 EUR.
+
+Q184: I am going to Serbia. How much monthly Erasmus+ grant do I get?
+A: Serbia is in Group 3, so the monthly Erasmus+ grant for 2026/27 is 550 EUR.
+
+Q185: Can I get Erasmus+ funding if I am writing my thesis abroad and not taking courses?
+A: Yes, but if the student does not participate in coursework or obtains fewer than 20 ECTS, financial support is limited to 3 months.
+
+Q186: Do I need to pay exam fees at the host institution?
+A: No. Erasmus+ students must not be charged fees for tuition, registration, examinations, or access to laboratory and library facilities.
+
+Q187: Can I be charged for student union membership?
+A: Yes. Small fees may be charged on the same basis as local students, for example for insurance, student union membership, or study-related materials.
+
+Q188: What should I do if I experience discrimination during Erasmus+?
+A: Erasmus+ students are entitled to equal treatment and non-discrimination. They should contact the host institution support services, Erasmus coordinator, or relevant student support bodies.
+
+Q189: Do I need to complete a participant report after Erasmus+?
+A: Yes. After mobility, students must complete a participant report to provide feedback on their Erasmus+ experience.
+
+Q190: What document should I receive from the host university after study mobility?
+A: The host university should provide a Transcript of Records showing the credits and grades achieved, preferably in digital format.
+
+Q191: What document should I receive after traineeship mobility?
+A: For traineeship mobility, the receiving organization or institution should provide a traineeship certificate summarizing the tasks carried out and giving an evaluation.
+
+Q192: Can I get a Europass Mobility document after Erasmus+?
+A: Yes. Recent graduates are entitled and encouraged to request the Europass Mobility document, especially for traineeships or mobility experience documentation.
+
+Q193: Which partner university in Belgium is available for UL FRI students?
+A: Vrije Universiteit Brussel, Faculty of Sciences and Bioengineering Sciences, is listed as the Belgian partner institution.
+
+Q194: Which partner universities are available in France?
+A: The listed French partner institutions are CY Cergy Paris Université and INSA Lyon.
+
+Q195: Which partner university in Norway is available?
+A: The listed Norwegian partner institution is the Norwegian University of Science and Technology, NTNU.
+
+Q196: Are there Erasmus+ partner universities in Sweden?
+A: Yes. The listed Swedish partners are University of Gothenburg, Luleå University of Technology, and Malmö University.
+
+Q197: Which partner university has only one available place in Iceland?
+A: Reykjavík University – School of Computer Science has 1 available place with a duration of 10 months.
+
+Q198: Can I choose courses from multiple NTNU campuses?
+A: Students should not assume they can combine courses across NTNU campuses. NTNU course selection depends on the chosen city or campus, and students must find enough eligible courses in one city.
+
+Q199: Can exchange students write a thesis at Reykjavík University?
+A: Reykjavík University states that thesis work may not be available to exchange students unless a special thesis collaboration agreement exists.
+
+Q200: If I want a final answer about whether my course plan will be approved, who decides?
+A: Final approval depends on the Learning Agreement and the responsible coordinators at UL FRI and the host institution. The assistant can help with information, but the coordinators make the actual recognition decision.
+
+Q201: Can I use the European Health Insurance Card (EHIC) during Erasmus+ mobility?
+A: EU students can usually use the European Health Insurance Card (EHIC) for medically necessary public healthcare during temporary stays in another EU or participating country. Students should still check whether additional insurance is recommended or required by the host institution.
+
+Q202: Will Erasmus+ cover my therapy, medication, or private medical treatment abroad?
+A: Health coverage abroad depends on your insurance provider, destination country, and the type of treatment. Students should check directly with their insurance provider and the host country healthcare system before departure.
+
+Q203: What is the difference between Erasmus+ study mobility and Erasmus+ traineeship mobility?
+A: Study mobility focuses on completing courses or academic obligations at a partner university, while traineeship mobility focuses on practical work experience or internship placement abroad.
+
+Q204: Can Erasmus+ experience improve my CV even if I do not work abroad later?
+A: Yes. Erasmus+ experience can help students develop international experience, language skills, adaptability, and intercultural communication skills that may be useful in future studies or employment.
+
+Q205: Is Erasmus+ only available for students in the European Union?
+A: No. Erasmus+ includes partner countries and participants with different citizenships, although visa rules, residence rights, and eligibility conditions may differ depending on nationality and programme rules.
+
+Q206: What is usually the biggest challenge for Erasmus+ students abroad?
+A: Common challenges include finding accommodation, adapting to a new academic system, language barriers, administrative procedures, and managing living costs.
+
+Q207: Can Erasmus+ help me improve my language skills?
+A: Yes. Erasmus+ mobility often helps students improve practical language skills through daily life, academic work, and communication in an international environment.
+
+Q208: Is train travel usually considered more environmentally friendly than flying?
+A: In general, train travel is considered a lower-emission form of transportation compared to flying and is commonly promoted as a more environmentally friendly travel option.
+
+Q209: Can I receive additional Erasmus+ funding if I travel green?
+A: Yes. Students using green travel may receive higher travel support and may request funding for up to 6 additional travel days if eligible conditions are met.
+
+Q210: What is the cheapest way to travel between Erasmus+ destinations in Europe?
+A: Travel costs depend on the destination, season, and booking time. Students often compare trains, buses, low-cost airlines, and shared transport options before choosing the most affordable route.
