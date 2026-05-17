@@ -13,7 +13,7 @@ hungover_pandas/
 ├── code/
 │   ├── index.py          # Builds the FAISS vector index from your documents
 │   ├── rag.py            # Main chatbot — interactive or test mode
-│   ├── evaluate.py       # Automated evaluation against 115 QA pairs
+│   ├── evaluate.py       # Automated evaluation against 210 QA pairs
 │   └── llm_test.py       # Quick check that the LLM loads and generates correctly
 │
 ├── data/
@@ -128,7 +128,7 @@ python code/rag.py --model models/gemma-3-4b-it
 ```
 
 ### Step 4 — Evaluate
-Runs all 115 QA pairs through the RAG and saves results:
+Runs all 210 QA pairs through the RAG and saves results:
 ```bash
 # Quick test (first 10 questions)
 python code/evaluate.py --limit 10
