@@ -31,7 +31,7 @@ hungover_pandas/
 │       └── ...
 │
 ├── evaluation/
-│   ├── test_questions.json   # 115 Erasmus QA pairs for evaluation
+│   ├── test_questions.json   # 210 Erasmus QA pairs for evaluation
 │   ├── results.csv           # Per-question evaluation output (generated)
 │   └── summary.txt           # Overall metrics summary (generated)
 │
