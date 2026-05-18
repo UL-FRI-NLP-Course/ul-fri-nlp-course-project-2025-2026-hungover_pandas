@@ -1,0 +1,16 @@
+
+=================================================================
+  GEMINI BASELINE EVALUATION SUMMARY
+=================================================================
+  Model              : gemini-2.5-pro
+  Questions          : 210
+  Avg F1 score       : 0.1758  (17.6%)
+  Avg Gemini score   : 74.2/100
+  Key info hit       : 96.7%
+
+  Assessment breakdown:
+    CORRECT           : 116 (55%)
+    PARTIALLY_CORRECT :  36 (17%)
+    INCORRECT         :  33 (15%)
+    HALLUCINATED      :  25 (11%)
+=================================================================
