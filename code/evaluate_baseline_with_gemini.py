@@ -13,8 +13,8 @@ Usage:
     python code/evaluate_gemini.py --model gemini-1.5-pro # override model
 
 Output:
-    evaluation/gemini_results.csv   — per-question results
-    evaluation/gemini_summary.txt   — overall metrics
+    evaluation/gemini_evaluation_baseline_results.csv   — per-question results
+    evaluation/gemini_evaluation_baseline_summary.txt   — overall metrics
 """
 
 import argparse
@@ -40,7 +40,7 @@ load_dotenv()
 # ── Config ────────────────────────────────────────────────────────────────────
 
 DEFAULT_QA_FILE = "evaluation/test_questions.jsonl"
-DEFAULT_OUTPUT  = "evaluation/gemini_results.csv"
+DEFAULT_OUTPUT  = "evaluation/gemini_evaluation_baseline_results.csv"
 GEMINI_MODEL    = "gemini-2.5-pro"
 
 SYSTEM_PROMPT = (
@@ -193,7 +193,7 @@ def print_summary(results: list, f1_scores: list, gemini_scores: list, model_nam
     )
     print(summary)
 
-    summary_path = Path(output).parent / "gemini_summary.txt"
+    summary_path = Path(output).parent / "gemini_evaluation_baseline_summary.txt"
     summary_path.write_text(summary, encoding="utf-8")
     print(f"[INFO] Summary saved → '{summary_path}'")
 
