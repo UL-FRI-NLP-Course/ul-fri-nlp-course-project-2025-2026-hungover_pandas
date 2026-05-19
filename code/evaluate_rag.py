@@ -1,18 +1,20 @@
 """
 evaluate.py — Automated evaluation of the Erasmus RAG chatbot.
 
-Runs all questions from evaluation/test_questions.json through the RAG pipeline,
-compares answers to ground truth, and saves a results CSV + summary statistics.
+Runs questions from evaluation/test_questions.json through the RAG pipeline.
+Supports resuming — skips questions already answered in the output CSV.
 
 Usage:
-    python code/evaluate.py                          # evaluate all questions
-    python code/evaluate.py --limit 20               # first 20 questions only
+    python code/evaluate.py                          # run all, skip existing
+    python code/evaluate.py --limit 20               # first 20 only
     python code/evaluate.py --model <path>           # override model path
     python code/evaluate.py --output results.csv     # custom output file
+    python code/evaluate.py --no-skip                # re-run everything
 
 Output:
-    evaluation/results.csv   — per-question results
-    evaluation/summary.txt   — overall metrics for your report
+    evaluation/results.csv        — per-question results (Llama)
+    evaluation/results_gemma3.csv — per-question results (Gemma)
+    evaluation/summary.txt        — overall metrics
 """
 
 import argparse
@@ -24,7 +26,6 @@ import time
 import warnings
 from pathlib import Path
 
-# Suppress noisy but harmless warnings from transformers / bitsandbytes
 warnings.filterwarnings("ignore")
 logging.getLogger("transformers").setLevel(logging.ERROR)
 logging.getLogger("transformers.generation").setLevel(logging.ERROR)
@@ -57,13 +58,9 @@ SYSTEM_PROMPT = (
 )
 
 
-# ── Simple lexical metrics (no extra deps needed) ────────────────────────────
+# ── Metrics ──────────────────────────────────────────────────────────────────
 
 def token_overlap_f1(prediction: str, reference: str) -> float:
-    """
-    Token-level F1 score between prediction and reference.
-    Fast proxy for answer quality — used in SQuAD evaluation.
-    """
     pred_tokens = set(prediction.lower().split())
     ref_tokens  = set(reference.lower().split())
     if not pred_tokens or not ref_tokens:
@@ -77,11 +74,6 @@ def token_overlap_f1(prediction: str, reference: str) -> float:
 
 
 def contains_key_info(prediction: str, reference: str) -> bool:
-    """
-    Rough check: does the prediction contain at least one meaningful noun
-    from the reference? Useful for catching total misses.
-    """
-    # Extract "content words" (length > 4) from reference
     ref_words = {w.lower().strip(".,;:()[]") for w in reference.split() if len(w) > 4}
     pred_lower = prediction.lower()
     matches = sum(1 for w in ref_words if w in pred_lower)
@@ -92,7 +84,22 @@ def is_fallback(prediction: str) -> bool:
     return "don't have that information" in prediction.lower()
 
 
-# ── Model loading (same as rag.py) ───────────────────────────────────────────
+# ── Resume: load already-answered question IDs ───────────────────────────────
+
+def load_existing_ids(output_path: str) -> set:
+    """Return set of question IDs already present in the output CSV."""
+    p = Path(output_path)
+    if not p.exists():
+        return set()
+    with open(p, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        ids = {row["id"] for row in reader if row.get("id")}
+    if ids:
+        print(f"  Resuming — {len(ids)} questions already answered in '{output_path}'")
+    return ids
+
+
+# ── Model loading ─────────────────────────────────────────────────────────────
 
 def get_load_strategy() -> dict:
     if not torch.cuda.is_available():
@@ -140,6 +147,7 @@ def load_components(model_path: str, index_dir: str):
     model = AutoModelForCausalLM.from_pretrained(model_path, **load_kwargs)
     if hasattr(model, "generation_config") and hasattr(model.generation_config, "max_length"):
         model.generation_config.max_length = None
+        model.generation_config.max_new_tokens = 512
 
     terminators = [tokenizer.eos_token_id]
     eot_id = tokenizer.convert_tokens_to_ids("<|eot_id|>")
@@ -182,109 +190,112 @@ def build_chain(retriever, llm, tokenizer):
 
 # ── Main evaluation loop ──────────────────────────────────────────────────────
 
-def evaluate(model_path: str, index_dir: str, qa_file: str, output: str, limit: int | None):
-    # Load QA pairs
-    qa_path = Path(qa_file)
-    if not qa_path.exists():
-        print(f"ERROR: QA file not found at '{qa_file}'")
-        sys.exit(1)
-    with open(qa_path, encoding="utf-8") as f:
+def evaluate(model_path: str, index_dir: str, qa_file: str, output: str,
+             limit: int | None, skip_existing: bool):
+
+    with open(qa_file, encoding="utf-8") as f:
         qa_pairs = json.load(f)
     if limit:
         qa_pairs = qa_pairs[:limit]
-    print(f"Evaluating {len(qa_pairs)} questions from '{qa_file}'")
 
-    # Load components
+    # Determine which questions still need answers
+    already_done = load_existing_ids(output) if skip_existing else set()
+    todo = [qa for qa in qa_pairs if qa["id"] not in already_done]
+
+    if not todo:
+        print("All questions already answered. Nothing to do.")
+        print("Run with --no-skip to re-run everything.")
+        return
+
+    print(f"\nTotal questions : {len(qa_pairs)}")
+    print(f"Already answered: {len(already_done)}")
+    print(f"To run now      : {len(todo)}")
+
     retriever, llm, tokenizer = load_components(model_path, index_dir)
     chain = build_chain(retriever, llm, tokenizer)
 
-    # Run evaluation
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    results = []
-    f1_scores = []
-    fallback_count = 0
+
+    # Append mode if resuming, write mode if starting fresh
+    file_mode = "a" if already_done else "w"
+    fieldnames = ["id", "question", "expected", "prediction",
+                  "f1", "has_key_info", "is_fallback", "time_s"]
 
     print(f"\n{'='*65}")
-    print(f"  Running evaluation ({len(qa_pairs)} questions)...")
+    print(f"  Running ({len(todo)} questions)...")
     print(f"{'='*65}\n")
 
-    for i, item in enumerate(qa_pairs, 1):
-        qid      = item["id"]
-        question = item["question"]
-        expected = item["answer"]
+    f1_scores     = []
+    fallback_count = 0
 
-        print(f"[{i:3}/{len(qa_pairs)}] {qid}: {question[:70]}...")
-        t0 = time.time()
+    with open(output, file_mode, newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if file_mode == "w":
+            writer.writeheader()
 
-        try:
-            prediction = chain.invoke(question).strip()
-        except Exception as e:
-            prediction = f"ERROR: {e}"
+        for i, item in enumerate(todo, 1):
+            qid      = item["id"]
+            question = item["question"]
+            expected = item["answer"]
 
-        elapsed = time.time() - t0
-        f1      = token_overlap_f1(prediction, expected)
-        has_key = contains_key_info(prediction, expected)
-        fallback = is_fallback(prediction)
+            print(f"[{i:3}/{len(todo)}] {qid}: {question[:70]}...")
+            t0 = time.time()
 
-        if fallback:
-            fallback_count += 1
-        f1_scores.append(f1)
+            try:
+                prediction = chain.invoke(question).strip()
+            except Exception as e:
+                prediction = f"ERROR: {e}"
 
-        print(f"        F1={f1:.2f}  key_info={'✓' if has_key else '✗'}  fallback={'yes' if fallback else 'no'}  ({elapsed:.1f}s)")
+            elapsed  = time.time() - t0
+            f1       = token_overlap_f1(prediction, expected)
+            has_key  = contains_key_info(prediction, expected)
+            fallback = is_fallback(prediction)
 
-        results.append({
-            "id":          qid,
-            "question":    question,
-            "expected":    expected,
-            "prediction":  prediction,
-            "f1":          round(f1, 4),
-            "has_key_info": has_key,
-            "is_fallback": fallback,
-            "time_s":      round(elapsed, 2),
-        })
+            if fallback:
+                fallback_count += 1
+            f1_scores.append(f1)
 
-    # Save CSV
-    with open(output, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=results[0].keys())
-        writer.writeheader()
-        writer.writerows(results)
+            print(f"        F1={f1:.2f}  key={'✓' if has_key else '✗'}  fallback={'yes' if fallback else 'no'}  ({elapsed:.1f}s)")
+
+            row = {
+                "id": qid, "question": question, "expected": expected,
+                "prediction": prediction, "f1": round(f1, 4),
+                "has_key_info": has_key, "is_fallback": fallback,
+                "time_s": round(elapsed, 2),
+            }
+            writer.writerow(row)
+            f.flush()  # write immediately so progress is saved even if job times out
+
     print(f"\nResults saved to '{output}'")
 
-    # Summary
-    avg_f1        = sum(f1_scores) / len(f1_scores)
-    key_info_rate = sum(1 for r in results if r["has_key_info"]) / len(results)
-    fallback_rate = fallback_count / len(results)
+    if f1_scores:
+        avg_f1        = sum(f1_scores) / len(f1_scores)
+        key_info_rate = sum(1 for r in [True] if r) / max(len(f1_scores), 1)
+        fallback_rate = fallback_count / len(f1_scores)
+        print(f"\n  This batch — Avg F1: {avg_f1:.3f}  Fallback rate: {fallback_rate*100:.1f}%")
 
-    summary = (
-        f"\n{'='*65}\n"
-        f"  EVALUATION SUMMARY\n"
-        f"{'='*65}\n"
-        f"  Model        : {Path(model_path).name}\n"
-        f"  Questions    : {len(results)}\n"
-        f"  Avg F1 score : {avg_f1:.4f}  ({avg_f1*100:.1f}%)\n"
-        f"  Key info hit : {key_info_rate*100:.1f}%  (answer contains relevant terms)\n"
-        f"  Fallback rate: {fallback_rate*100:.1f}%  (\"don't have that information\")\n"
-        f"{'='*65}\n"
-    )
-    print(summary)
-
-    summary_path = Path(output).parent / "summary.txt"
-    with open(summary_path, "w", encoding="utf-8") as f:
-        f.write(summary)
-    print(f"Summary saved to '{summary_path}'")
+    print(f"\nDone. Run code/make_human_eval_sheet.py to generate annotation file.\n")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate Erasmus RAG chatbot.")
-    parser.add_argument("--model",     default=DEFAULT_MODEL_PATH)
-    parser.add_argument("--index-dir", default=DEFAULT_INDEX_DIR)
-    parser.add_argument("--qa-file",   default=DEFAULT_QA_FILE)
-    parser.add_argument("--output",    default=DEFAULT_OUTPUT)
-    parser.add_argument("--limit",     type=int, default=None,
-                        help="Evaluate only first N questions (for quick testing)")
+    parser.add_argument("--model",       default=DEFAULT_MODEL_PATH)
+    parser.add_argument("--index-dir",   default=DEFAULT_INDEX_DIR)
+    parser.add_argument("--qa-file",     default=DEFAULT_QA_FILE)
+    parser.add_argument("--output",      default=DEFAULT_OUTPUT)
+    parser.add_argument("--limit",       type=int, default=None)
+    parser.add_argument("--no-skip",     action="store_true",
+                        help="Re-run all questions even if already answered")
     args = parser.parse_args()
 
-    evaluate(args.model, args.index_dir, args.qa_file, args.output, args.limit)
+    evaluate(
+        model_path=args.model,
+        index_dir=args.index_dir,
+        qa_file=args.qa_file,
+        output=args.output,
+        limit=args.limit,
+        skip_existing=not args.no_skip,
+    )
 
 
 if __name__ == "__main__":
