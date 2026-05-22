@@ -128,7 +128,7 @@ On the ARNES HPC setup used by `code/run_rag.sh`:
 
 ```bash
 source /cvmfs/sling.si/modules/el7/software/Anaconda3/2023.07-2/etc/profile.d/conda.sh
-conda activate nlp
+conda activate nlp_hungover_pandas
 cd /d/hpc/projects/onj_fri/hungover_pandas
 ```
 
