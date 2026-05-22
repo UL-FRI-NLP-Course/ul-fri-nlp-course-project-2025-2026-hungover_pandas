@@ -1,0 +1,3 @@
+model_family,n_paired,mean_score_untuned,mean_score_tuned,mean_score_delta,median_score_delta,pct_CORRECT_untuned,pct_CORRECT_tuned,pct_CORRECT_delta,pct_PARTIALLY_CORRECT_untuned,pct_PARTIALLY_CORRECT_tuned,pct_PARTIALLY_CORRECT_delta,pct_INCORRECT_untuned,pct_INCORRECT_tuned,pct_INCORRECT_delta,pct_HALLUCINATED_untuned,pct_HALLUCINATED_tuned,pct_HALLUCINATED_delta
+Gemma,210,61.05,66.79,5.74,0.0,29.5,32.9,3.4,31.0,37.6,6.6,33.8,25.7,-8.1,5.7,3.8,-1.9
+Llama,114,66.27,73.99,7.72,0.0,32.5,43.9,11.4,38.6,33.3,-5.3,25.4,18.4,-7.0,3.5,4.4,0.9
