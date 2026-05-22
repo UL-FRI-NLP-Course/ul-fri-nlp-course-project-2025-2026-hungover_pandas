@@ -380,7 +380,7 @@ Model loading automatically chooses a strategy from the available GPU:
 | Fallback rate | How often the model says the answer is not in the knowledge base. |
 | BERTScore | Semantic similarity between prediction and reference using transformer scorer models. |
 | Gemini-as-judge score | LLM-based semantic assessment. |
-| Human evaluation score | Shown and explained in the report |
+| Human evaluation score | Shown and explained in the report. |
 
 ---
 
