@@ -30,9 +30,9 @@
 
 \Archive{Project report}
 
-\PaperTitle{Domain-Specific AI Assistant for the UL FRI Student Office}
+\PaperTitle{A Retrieval-Augmented AI Assistant for Erasmus+ Exchange Support at UL FRI}
 
-\Authors{Aleksa Sibinović, Hristijan Milanovski, and Sara Ivanovska}
+\Authors{Sara Ivanovska, Aleksa Sibinović and Hristijan Milanovski }
 
 \affiliation{\textit{Advisors: Aleš Žagar}}
 
@@ -42,10 +42,24 @@
 %----------------------------------------------------------------------------------------
 %   ABSTRACT
 %----------------------------------------------------------------------------------------
-
 \Abstract{
-University student offices routinely handle large volumes of repetitive administrative inquiries, yet the relevant information is often scattered across official websites and formal documents that students find difficult to navigate. In this work, we present a domain-specific AI assistant for the UL FRI student office, built on a retrieval-augmented generation (RAG) pipeline that grounds responses in official institutional sources. The knowledge base was assembled from UL FRI and University of Ljubljana web pages, official PDF rulebooks, and materials obtained directly from the Erasmus coordination office, including a presentation and transcribed student Q&A from the 2026/27 kickoff meeting. Documents are chunked, embedded using a sentence-transformer model, and indexed with FAISS; at query time, Maximum Marginal Relevance retrieval selects diverse, relevant passages that are passed to Gemini 2.5 Flash Lite for answer generation. We evaluate the system on an 18-question benchmark covering Erasmus exchange procedures, using an LLM-as-a-judge framework. The system achieves a mean score of 77.2 out of 100, with 66.7\% of responses rated fully correct, 16.7\% partially correct, and 16.7\% classified as hallucinated — all arising from retrieval failures where the model incorrectly disclaimed knowledge present in the index. These results suggest that RAG-based assistants over curated institutional corpora can serve as effective first points of contact for student administrative queries, while pointing to retrieval robustness as the primary bottleneck for further improvement.
-
+We present a retrieval-augmented AI assistant for Erasmus+ exchange
+support at UL FRI, retrieving information from curated official sources including university materials, Erasmus+ guidance documents,
+and resources obtained directly through the UL FRI Erasmus
+coordination process. Documents are chunked, embedded using a
+sentence-transformer model, indexed with FAISS, and retrieved using
+Maximum Marginal Relevance search before answer generation with local
+open-weight language models. The system is evaluated on a manually
+curated benchmark of 210 Erasmus-related questions using three
+complementary approaches: BERTScore semantic evaluation, LLM-as-judge
+assessment via the Gemini API, and manual human evaluation, comparing
+two local open-weight models, Llama 3.1-8B and Gemma 3-4B, under
+initial ($k=3$) and tuned ($k=7$) retrieval configurations. Results
+show that retrieval grounding reduces hallucinations by nearly an order
+of magnitude compared to a Gemini no-retrieval baseline, with manual
+evaluation scores improving from 1.88 to 2.32 for the best RAG
+configuration, and that retrieval depth matters more than model scale
+in this domain.
 }
 
 %----------------------------------------------------------------------------------------
@@ -59,104 +73,320 @@ University student offices routinely handle large volumes of repetitive administ
 %----------------------------------------------------------------------------------------
 %   ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
-
 \section*{Introduction}
 
-University student offices receive many repetitive questions about enrollment, exam regulations, study progression, deadlines, certificates, and other administrative procedures. Although this information is usually available on official faculty and university websites or in formal rulebooks, students often struggle to find the relevant answer efficiently. The information is spread across multiple web pages and PDF documents, written in formal language, and can be difficult to interpret without prior familiarity with university procedures.
+Students preparing for Erasmus exchange at UL FRI must navigate a
+large amount of administrative information spread across faculty pages,
+University of Ljubljana documents, official Erasmus+ guidance, PDF
+forms, and partner university catalogues. Questions are often
+procedural and context-dependent, covering deadlines, Learning
+Agreements, ECTS recognition, financial support, visa requirements, and
+post-mobility documentation, and rarely have a single authoritative
+source. General-purpose language models can produce fluent and plausible sounding
+answers, but without access to institution-specific sources they often
+hallucinate deadlines, funding amounts, or eligibility conditions. In an
+administrative context, such errors can directly harm a student's exchange
+plans.
 
-In this project, we develop a domain-specific AI assistant for the UL FRI student office that helps students access accurate administrative information more easily. Instead of acting as a generic chatbot, the system is designed to answer questions by grounding its responses in official UL FRI and University of Ljubljana documents. This makes the assistant more reliable and better suited for an academic administrative setting, where factual correctness is important.
+We address this by developing a domain-specific AI assistant grounded
+in curated official and institution-specific sources.Our approach is based on retrieval-augmented generation (RAG): the
+system retrieves relevant document chunks from a curated Erasmus
+knowledge base and uses a large language model to generate an answer
+grounded in the retrieved content. This combines the flexibility of conversational question
+answering with the factual grounding of official documents, reducing
+the risk of unsupported or hallucinated responses.
 
-Our approach is based on retrieval-augmented generation (RAG). The system first retrieves relevant passages from a curated collection of official web pages and PDF documents, and then uses a large language model to generate an answer based on the retrieved content. This combines the flexibility of language models with the reliability of official sources.
-
-The goal of the project is to examine whether such a retrieval-based assistant can serve as a useful first point of contact for common student-office questions at UL FRI.%------------------------------------------------
-
-\section*{Related Work}
-
-Recent advances in large language models (LLMs) and retrieval-augmented generation (RAG) have led to a variety of domain-specific question answering systems that closely relate to the goals of this project. Lewis et al.\ \cite{lewis2020rag} formally introduced the RAG architecture, demonstrating how combining neural retrieval with sequence-to-sequence generation improves open-domain question answering by grounding answers in retrieved documents rather than relying solely on parametric knowledge. Subsequent work has studied how to better adapt RAG to specialized domains, where terminology, document structure, and information needs differ substantially from generic web corpora \cite{adlakha2023improving}. These findings support the design choice of grounding the UL FRI assistant in institutional web pages and PDF rulebooks instead of general web search.
-
-A growing body of research explores domain-specific RAG pipelines over technical or organizational documentation. Kim and Lee \cite{kim2024rerag} propose RE-RAG, which explicitly mitigates the negative impact of irrelevant retrieved passages on open-domain QA performance by refining the retrieval and re-ranking stages. Tanaka et al.\ \cite{tanaka2025vdoorag} introduce VDocRAG, a framework for RAG over visually rich documents such as PDFs containing tables and complex layouts, and show that specialized preprocessing of heterogeneous document formats is crucial for high-quality answers. Similarly, domain-focused systems such as the Aggregated Knowledge Model at Lawrence Berkeley National Laboratory combine fine-tuned and RAG-based models over institutional documentation to improve reliability and coverage in a closed-domain QA setting \cite{akm2024}. These works motivate the project’s emphasis on careful document ingestion, chunking, and metadata management for university regulations and procedures.
-
-There is also work specifically targeting question answering over structured institutional or regulatory text. DoQA \cite{campos2020doqa} presents a benchmark for accessing domain-specific FAQ collections via conversational QA, highlighting that realistic information-seeking dialogues often revolve around well-defined but non-trivial information needs in constrained domains. In education-focused settings, recent frameworks combine RAG with LLM-based code interpreters to build more accurate and transparent educational Q\&A systems that draw on curated curricular or institutional knowledge bases \cite{eduqna2025}. Together, these lines of work indicate that retrieval-based assistants over high-quality institutional corpora can serve as reliable first points of contact for users seeking procedural or regulatory information, which is precisely the role envisioned for the UL FRI student-office assistant.
+We evaluate whether retrieval grounding improves factual reliability
+compared to a Gemini 2.5 Pro no-retrieval baseline, and compare two local
+open-weight models, Llama 3.1-8B and Gemma 3-4B, under both an
+initial retrieval configuration ($k{=}3$) and a tuned one ($k{=}7$).
 
 \section*{Dataset}
 
-Since no pre-existing dataset exists for this domain, we construct our own knowledge base from publicly available institutional sources.
+Since no pre-existing dataset exists for this domain, we constructed
+our own knowledge base from publicly available institutional and
+Erasmus-related sources. The dataset combines publicly available
+university materials with Erasmus-specific resources obtained through
+direct interaction with the UL FRI Erasmus coordination process.
+Institutional sources include the UL FRI website and the University of
+Ljubljana central website. We additionally incorporated
+official Erasmus+ guidance documents covering financial support, Online
+Learning Agreements (OLA), student rights and obligations, visa and
+residence procedures, doctoral mobility, traineeships, and UL FRI
+partner institutions. Structured course-guidance files for selected
+partner universities were also prepared to support questions related to
+course selection and exchange planning.
 
-\subsection*{Data Sources}
-
-In addition to publicly available institutional materials, a key part of our dataset was obtained through direct engagement with the Erasmus coordination process at UL FRI. We attended the official Erasmus exchange kickoff meeting for the 2026/27 academic year, where we interacted with the main coordinator, Vesna Gračner. Through this interaction, we obtained the official presentation used during the session, which contains detailed procedural information about the Erasmus application process, learning agreements, funding, and administrative requirements.
-
-This source proved to be particularly valuable, as it captures practical, experience-driven information that is not always explicitly or clearly documented on official websites. In addition to the presentation itself, we systematically recorded and transcribed questions raised by students during the Q\&A session, along with the corresponding answers provided by the coordinator. These question-answer pairs reflect real user information needs and were used both to enrich the knowledge base and to construct realistic evaluation queries for the assistant.
-
-We complement this primary source with publicly available materials from the \textbf{UL FRI website} (\href{https://www.fri.uni-lj.si}{fri.uni-lj.si}), which provide information on study programmes, enrollment procedures, and exam regulations; the \textbf{University of Ljubljana central website} (\href{https://www.uni-lj.si}{uni-lj.si}), which contains university-wide administrative rules; and \textbf{official PDF documents}, such as the Student Statute and enrollment rulebooks.
-
-
-\subsection*{Data Collection and Processing}
-
-For the current prototype, the collected materials were manually converted into clean plain-text documents and organized by topic, including admissions, study programmes, visa and residence information, student life, and Erasmus exchange procedures. The Erasmus kickoff presentation and the corresponding student Q\&A content were transformed into structured textual notes and question-answer pairs so that they could be used both as knowledge-base material and as realistic evaluation queries.
-
-The documents are loaded from local text files and split into overlapping chunks, allowing the retrieval system to identify fine-grained passages relevant to a user question. These chunks are then embedded using a sentence-transformer model and stored in a FAISS vector index for similarity-based retrieval. Although the current implementation relies on curated plain-text sources, the same pipeline can be extended to automatically scraped web pages and extracted PDF text, with additional metadata such as source URLs and retrieval dates.
+A particularly valuable part of the dataset was obtained through direct
+engagement with the Erasmus coordination process at UL FRI. We attended
+the official Erasmus exchange kickoff meeting for the 2026/27 academic
+year, where we interacted with the main coordinator, Vesna Gračner, and
+obtained the official presentation used during the session. We also
+systematically recorded and transcribed student questions raised during
+the Q\&A session, together with the coordinator's answers. These
+question-answer pairs capture realistic information needs and practical
+procedural clarifications that are not consistently documented in
+official written materials. The collected materials were organised by
+topic, covering admissions, study programmes, visa and residence
+procedures, student life, and Erasmus exchange. Additionally the Q\&A content
+was used both to enrich the knowledge base and to construct the
+evaluation benchmark described in the Results section.
 
 \section*{Methods}
 
-The assistant is built around a retrieval-augmented generation (RAG) pipeline consisting of two stages: an offline indexing stage that preprocesses and stores the knowledge base, and an online inference stage that retrieves relevant passages and generates a grounded answer.
+The assistant is built around a retrieval-augmented generation (RAG)
+pipeline consisting of two stages: an offline indexing stage that
+preprocesses and stores the knowledge base, and an online inference
+stage that retrieves relevant passages and generates a grounded answer. The overall architecture is illustrated in Figure~\ref{fig:rag-pipeline}.
 
-\subsection*{Document Indexing}
-
-All knowledge-base documents are loaded and parsed before any queries are processed. Plain-text files are read directly, while PDF documents are parsed page by page, with each page treated as a separate unit. Source path metadata is attached to every document during loading, which later allows the system to attribute each retrieved passage to its origin.
-
-The documents are then split into overlapping chunks using a recursive character splitter with a chunk size of 500 characters and an overlap of 50 characters. The overlap prevents relevant context from being lost at chunk boundaries. Each chunk is embedded into a dense vector representation using a lightweight sentence embedding model \cite{reimers2019sentencebert}, with output vectors L2-normalized to unit length. The resulting embeddings are stored in a FAISS flat index \cite{johnson2019faiss}, which is saved to disk and reused at query time without recomputation.
-
-\subsection*{Retrieval and Generation}
-
-At query time, the FAISS index is loaded and used as the backbone of a retriever configured with Maximum Marginal Relevance (MMR) search. MMR selects a small set of final chunks that are both relevant to the query and mutually diverse, which reduces redundancy when multiple retrieved passages cover the same narrow topic. In our setup, 10 candidate chunks are fetched and the top 3 are selected, with a diversity weight of 0.6.
-
-The retrieved chunks are concatenated into a single context string, each prefixed with its source path. This context is injected into a system prompt that explicitly instructs the model to answer using only the provided passages. If the retrieved context does not contain a sufficient answer, the model is instructed to respond with a fixed fallback message directing the student to the UL FRI website or the student office directly, rather than generating an unsupported response.
-
-Answer generation is handled by Gemini 2.5 Flash Lite, queried at a low temperature to favour consistent and factually grounded outputs. The full pipeline is assembled as a single LangChain chain: the retriever feeds formatted context into the prompt template, which is then passed to the language model and parsed into a plain-text answer. A debug mode is also available during development, which prints the retrieved source passages alongside each answer to support qualitative inspection of retrieval quality.
-
-\section*{Results}
-
-
-To evaluate the performance of the retrieval-augmented generation (RAG) system powered by Gemini, we constructed a benchmark of 18 questions covering various aspects of the Erasmus exchange programme as documented in FRI's official materials. Each model response was assessed using an LLM-as-a-judge evaluation framework that assigned a numerical score from 0 to 100 and a categorical label: \textsc{correct}, \textsc{partially\_correct}, or \textsc{hallucinated}.
-
-\subsection*{Overall Performance}
-
-Across all 18 questions, the system achieved a mean Gemini score of \textbf{77.2} out of 100, as shown in Figure \ref{fig:scores}. The score distribution was notably bimodal: the majority of responses received perfect or near-perfect scores, while a small subset received a score of zero, reflecting complete retrieval failures. The median score was 100, and both the 50th and 75th percentiles were at the maximum, indicating that the system performed excellently on the bulk of queries.
-
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.475\textwidth]{per_question_scores.png}
-    \caption{Per question scores evaluated with the Gemini API}
-    \label{fig:scores}
+    \includegraphics[width=\linewidth]{fig/rag_architecture.pdf}
+    \caption{Overview of the RAG pipeline. The offline phase builds a
+    FAISS vector index from the curated knowledge base; the online phase
+    retrieves relevant chunks and generates a grounded answer.}
+    \label{fig:rag-pipeline}
 \end{figure}
 
-\subsection*{Categorical Breakdown}
+\subsection*{Document indexing}
 
-The categorical assessment reveals a clearer picture of where the system succeeds and where it fails. Of the 18 questions:
+All knowledge-base documents are loaded and parsed before any queries
+are processed. Plain text files are read directly, while PDF documents
+are parsed page by page. 
 
-\begin{itemize}
-    \item \textbf{12 (66.7\%)} were rated \textsc{correct}, with an average score of 99.2, indicating that the system accurately retrieved and synthesised the relevant information in almost all such cases.
-    \item \textbf{3 (16.7\%)} were rated \textsc{partially\_correct}, with an average score of 66.7. These responses captured some relevant information but omitted key details required for a complete answer.
-    \item \textbf{3 (16.7\%)} were rated \textsc{hallucinated}, each receiving a score of 0. In all three cases the model incorrectly claimed it did not possess the requested information, directing the user to external sources, despite the answer being present in the knowledge base.
-\end{itemize}
+Documents are split into overlapping chunks using a recursive character
+splitter. We experimented with chunk sizes of 300, 500, and 700
+characters and found that 500 characters with a 50-character overlap
+offered the best balance between retrieval precision and contextual
+completeness. Smaller chunks frequently fragmented multi-step procedural
+answers, while larger chunks introduced irrelevant context. Each chunk
+is embedded into a dense vector representation using the
+\textit{all-MiniLM-L6-v2} sentence-transformer
+model~\cite{reimers2019sentencebert}, with output vectors L2-normalised
+to unit length. The resulting embeddings are stored in a FAISS flat
+index~\cite{johnson2019faiss}, saved to disk and reused at query time.
 
-\subsection*{Analysis of Errors}
+\subsection*{Retrieval and generation}
 
-\paragraph{Hallucinated Responses.}
-The three hallucinated responses (Q8, Q9, Q12) share a common failure mode: the model responded with a disclaimer stating it lacked the information, rather than retrieving it from the knowledge base. Concretely, Q8 asked how the Erasmus scholarship is paid (the correct answer being that 80\% is disbursed before the exchange and 20\% after completion), Q9 asked for the minimum and maximum duration of an exchange (2 and 12 months, respectively), and Q12 inquired whether language testing is mandatory before Erasmus (it is not, though some partner universities may require certificates). In all three instances the information was available in the indexed documents, suggesting that the retrieval step failed to surface the correct passage rather than the generation step fabricating an incorrect answer. This type of failure---where the model opts out rather than producing a plausible but wrong response---is conservative in one sense, but remains undesirable in a deployed assistant context.
+At query time, the FAISS index is used as the backbone of a retriever
+configured with Maximum Marginal Relevance (MMR) search. MMR selects
+chunks that are both relevant to the query and mutually diverse,
+reducing redundancy when multiple passages cover the same topic.
+We tuned the retrieval configuration by varying the number of retrieved
+chunks $k$ (3, 5, 7), chunk size (300, 500, 700 characters), search
+type (MMR vs.\ similarity), and embedding model (MiniLM vs.\ mpnet),
+evaluating each combination on 50 questions. As shown in
+Table~\ref{tab:tuning}, $k{=}7$ with MMR consistently produced the
+highest F1 and key-information coverage with the lowest fallback rate,
+and was adopted as the final configuration. In the MMR setup, 20
+candidate chunks are initially fetched (fetch\_k$=20$), the top 7 are
+selected by balancing relevance and diversity ($\lambda{=}0.6$, where
+higher values favour relevance over diversity). Both the baseline
+($k{=}3$) and tuned ($k{=}7$) configurations were evaluated on the
+full 210-question benchmark to quantify the impact of retrieval depth.
 
-\paragraph{Partially Correct Responses.}
-The three partially correct responses (Q1, Q14, Q16) reflect a different failure mode: incomplete information synthesis. For Q1, the model correctly stated that FRI nominates the student to the partner university but omitted the subsequent step of applying directly to the host institution. For Q14, it correctly identified content similarity as a factor in course recognition upon return, but missed the additional condition that the outcome also depends on whether specific FRI programme requirements are met. For Q16, the model mentioned the FRI Erasmus office as a point of contact for problems encountered abroad, but failed to list other important support channels such as the host university coordinator, Erasmus mentor, the UL central office, or student tutors. These partial answers suggest that while retrieval is succeeding, the generation step is not consistently consolidating all relevant spans from the retrieved context.
+
+\begin{table}[h]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccc}
+\hline
+\textbf{Configuration} & \textbf{Avg F1} & \textbf{Key info} & \textbf{Fallback} \\
+\hline
+$k{=}3$, chunk=500, MMR  & 43.8\% & 90.0\% & 8.0\% \\
+$k{=}5$, chunk=500, MMR  & 47.8\% & 92.0\% & 4.0\% \\
+$k{=}7$, chunk=500, MMR  & \textbf{51.6\%} & \textbf{92.0\%} & \textbf{2.0\%} \\
+$k{=}3$, chunk=300, MMR  & 39.3\% & 78.0\% & 10.0\% \\
+$k{=}3$, chunk=700, MMR  & 40.9\% & 78.0\% & 10.0\% \\
+$k{=}5$, similarity      & 45.0\% & 86.0\% &  4.0\% \\
+$k{=}5$, MMR, mpnet      & 47.6\% & 88.0\% &  4.0\% \\
+\hline
+\end{tabular}
+\caption{Retrieval configuration comparison on 50 questions.
+Bold indicates the selected final configuration.}
+\label{tab:tuning}
+\end{table}
+
+The retrieved chunks are concatenated into a context string, each
+prefixed with its source path, and injected into a structured prompt
+that instructs the model to answer using only the provided passages.
+If the context does not contain a sufficient answer, the model responds
+with a fixed fallback message directing the student to the UL FRI
+website or student office, rather than generating an unsupported
+response.
+
+Answer generation is handled locally on the ARNES HPC cluster using
+two open-weight models: \textit{Llama 3.1-8B-Instruct} and
+\textit{Gemma 3-4B-IT}. Llama 3.1-8B served as the primary model and consistently outperformed
+Gemma 3-4B on questions requiring exact procedural or administrative
+details specific to UL FRI.
+The full pipeline is assembled as a single LangChain LCEL chain: the
+retriever feeds formatted context into the prompt template, which is
+passed to the language model and parsed into plain text answer.
 
 
+
+\section*{Results}
+We evaluated the system on a manually curated benchmark of 210
+Erasmus-related questions covering procedural, administrative, legal,
+and general informational topics. Questions were constructed to span
+varying levels of retrieval dependence, from those requiring exact
+institutional information to broader questions that can be partially
+answered from general world knowledge. The benchmark also includes
+deliberately vague and ambiguous cases to reflect realistic student
+interactions.
+
+Two models were evaluated within the same RAG pipeline: Llama 3.1-8B
+and Gemma 3-4B, each under an initial retrieval configuration ($k=3$)
+and the tuned configuration ($k=7$).
+
+\subsection*{BERTScore evaluation}
+
+We tested 14 different BERT score metrics, of the families DeBERTa v1 \cite{he2021deberta}, DeBERTa v2 \cite{he2021debertav2_hf}, DeBERTa v3 \cite{he2021debertav3}, XLNet \cite{yang2019xlnet}, ELECTRA \cite{clark2020electra} and RoBERTa \cite{liu2019roberta} using bootstrap settings: 10,000 resamples, 95\% percentile confidence intervals, seed 42. The highest absolute-F1 scorer across all model configurations was roberta-large with mean F1 0.8787. On the other hand, the lowest absolute-F1 scorer was xlnet-large-cased with mean F1 0.5541. We report results for the best-performing scorer, roberta-large,
+as shown in Table~\ref{tab:tuned_vs_not_tuned}. Full results for
+all 14 configurations are available in the project repository.
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+
+\begin{tabular}{lccc}
+\hline
+\textbf{Model} & \textbf{Not tuned} & \textbf{Tuned} & \textbf{$\Delta$} \\
+\hline
+Gemini 2.5 Pro baseline & 0.8401 & -- & -- \\
+Gemma            & 0.8853 & 0.8929 & 0.0076 \\
+Llama            & 0.8861 & 0.8892 & 0.0031 \\
+\hline
+\end{tabular}
+
+\caption{Mean F1 scores for tuned and non-tuned models evaluated with the roberta-large scorer.}
+\label{tab:tuned_vs_not_tuned}
+\end{table}
+
+Moreover, Gemma bootstrap CIs exclude zero for 14/14 scorer models, while Llama bootstrap CIs exclude zero for 5/14 scorer models. These results suggest that the observed effect is robust and consistently statistically significant for Gemma across all scorer models, whereas evidence for the effect in Llama is much weaker and less consistent.
+
+
+\subsection*{LLM-as-judge evaluation}
+
+We used the Gemini API to evaluate how well the five models answered each of the 210 questions. The results in Table~\ref{tab:model_performance} indicate a noticeable bias toward the Gemini baseline responses. This is likely because the Gemini baseline system prompt explicitly included the university websites \href{https://www.uni-lj.si/}{uni-lj.si} and \href{https://fri.uni-lj.si/}{fri.uni-lj.si}, providing the model with direct access to some available information. The Gemini-generated answers frequently referenced links and documents that appeared plausible and contextually appropriate at first glance. As a result, the evaluation process often failed to distinguish between superficially convincing answers and genuinely correct ones, which likely contributed to inflated evaluation scores compared to the other models.
+
+The Gemini API evaluation system assigns scores in four bands: Correct, Mostly correct, Partially correct, and Incorrect.
+
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model} & \textbf{Corr.} & \textbf{Mostly. Corr.} & \textbf{Partiall. Corr.} & \textbf{Incorrect} \\
+\hline
+Gemini 2.5 Pro baseline  & 55.2\% & 17.1\% & 15.7\% & 11.9\% \\
+Gemma 3 RAG, k = 3  & 29.5\% & 31.0\% & 33.8\% & 5.7\% \\
+Gemma 3 RAG, k = 7  & 32.9\% & 37.6\% & 25.7\% & 3.8\% \\
+Llama 3.1 RAG, k = 3  & 32.5\% & 38.6\% & 25.4\% & 3.5\% \\
+Llama 3.1 RAG, k = 7     & 39.5\% & 32.4\% & 22.4\% & 5.7\% \\
+\hline
+\end{tabular}
+}
+\caption{Performance comparison across models in percentages, indicating a clear bias towards the Gemini baseline.}
+\label{tab:model_performance}
+\end{table}
+
+
+\subsection*{Human evaluation}
+
+While automated metrics capture lexical and semantic similarity,
+they cannot reliably detect subtle hallucinations or assess whether
+an answer is practically useful for a student. We therefore conducted
+a manual evaluation using a four-level scoring scheme, in which \textbf{3} indicates a correct and complete answer, \textbf{2} indicates a mostly correct answer but missing important details, \textbf{1} indicates a partially correct or vague answer, and \textbf{0} indicates an incorrect or unusable answer.
+
+During manual evaluation, responses were additionally annotated for hallucinations. A hallucination was defined as any unsupported or fabricated information generated by the model, either as part of an otherwise correct answer or as the entire response. Fallback responses indicating that sufficient information was unavailable and directing students to the relevant office were not considered hallucinations and could still receive positive scores if the fallback was appropriate for the question.
+
+The Gemini baseline was first evaluated automatically using an LLM-as-a-judge approach, but the scores appeared overly optimistic and did not sufficiently penalize unsupported procedural claims or subtle hallucinations.We therefore manually re-evaluated the baseline using the same protocol applied to all RAG configurations. This reduced the baseline average score from 2.09 to 1.88 and decreased the proportion of fully correct answers from 55.7\% to 45.2\%. Notably, many hallucinations were not detected automatically because the model failed to recognize outdated or institution-specific information.
+
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model}  & \textbf{Avg. score} & \textbf{Score $\geq$ 2} & \textbf{Score 3} & \textbf{Hallucinations} \\
+\hline
+Gemini 2.5 Pro baseline  & 1.88 & 61.4\% & 45.2\% & 67 (31.9\%) \\
+Llama 3.1 RAG, $k=3$  & 2.13 & 70.0\% & 60.5\% & 9 (4.3\%) \\
+Gemma 3 RAG, $k=3$  & 1.93 & 65.2\% & 53.3\% & 13 (6.2\%) \\
+Llama 3.1 RAG, $k=7$  & 2.32 & 78.1\% & 65.7\% & 11 (5.2\%) \\
+Gemma 3 RAG, $k=7$  & 2.27 & 76.7\% & 63.8\% & 11 (5.2\%) \\
+\hline
+\end{tabular}
+}
+\caption{Manual evaluation results across the baseline and RAG configurations.}
+\label{tab:manual-eval-overall}
+\end{table}
+
+
+Table~\ref{tab:manual-eval-overall} indicates that retrieval primarily improved factual grounding and answer reliability rather than only raw correctness scores. Although the baseline often produced fluent and detailed answers for broader informational questions, it was frequently overconfident when handling vague or institution-specific procedures. This was especially visible when information differed across multiple partially outdated sources, such as Erasmus deadlines, travel support amounts, or administrative requirements. In several cases, the model hallucinated non-existent links or mixed outdated and current procedural information within the same answer.
+
+Importantly, many baseline answers that appeared mostly correct still included additional unsupported details that could confuse students or contradict official procedures. In contrast, retrieval grounding reduced hallucination rates by nearly an order of magnitude across all evaluated configurations.
+The results also suggest that retrieval depth had a stronger impact than the choice of local language model. Increasing the number of retrieved chunks from $k=3$ to $k=7$ consistently improved both Llama and Gemma, indicating that broader contextual coverage helped the models recover important procedural details and constraints that were often omitted in the smaller retrieval setup.
+
+Interestingly, the tuned Gemma configuration approached the performance of the larger Llama model despite having fewer parameters, suggesting that retrieval quality and context selection may play a more important role in this domain than model scale alone.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{fig/per_category.pdf}
+    \caption{Distribution of manual evaluation scores (0--3) across
+retrieval dependency categories and RAG configurations. Questions
+were grouped by how strongly they depended on retrieval:
+\textit{required}, \textit{helpful}, and \textit{not needed}. The figure shows the percentage of questions assigned each manual score (0--3) for both models and retrieval settings.
+    }
+    \label{fig:per-category-results}
+\end{figure}
+
+Figure~\ref{fig:per-category-results} shows that retrieval-dependent questions benefit the most from increasing retrieval depth. Both models produce more fully correct answers (score 3) and fewer failures (score 0) in the \textit{required} category after increasing retrieval from $k=3$ to $k=7$. This suggests that additional retrieved context primarily improves access to institution-specific procedural details that are difficult to answer from parametric model knowledge alone.
+
+The effect is particularly pronounced for Gemma 3-4B, whose performance gap relative to Llama 3.1-8B becomes noticeably smaller after tuning. This indicates that smaller models are more sensitive to retrieval quality and context coverage.
+
+In contrast, questions categorized as \textit{not needed} show smaller differences between retrieval configurations, suggesting that broader informational questions depend less on retrieval grounding and more on the underlying language model itself.
 %------------------------------------------------
-
 
 
 \section*{Discussion}
 
-The overall accuracy of the system is encouraging: two-thirds of all questions were answered correctly and completely, and the mean score exceeded 77 out of 100. However, the hallucination and partial correctness rates---each affecting approximately one in six questions---represent clear areas for improvement. The hallucination failures in particular suggest that the retrieval pipeline may be sensitive to the phrasing of certain queries, especially those involving procedural or numerical details that may be distributed across different parts of the source documents. Future work should explore query reformulation strategies, improved document chunking, and retrieval confidence thresholds to reduce the rate of uninformative opt-out responses. Addressing the partial completeness failures may additionally benefit from multi-passage fusion techniques or more explicit prompting of the generative model to enumerate all relevant details before producing a final answer.
+Base models often produced plausible high-level answers, while
+retrieval grounding helped recover institution-specific details
+necessary for practical student guidance. Automatic metrics alone
+were insufficient to capture this difference, as they rewarded
+semantically similar but procedurally unreliable answers, making
+manual evaluation essential for assessing factual grounding and
+hallucinations accurately.
+
+Most observed errors were not completely incorrect answers, but
+plausible yet incomplete responses missing deadlines, eligibility
+constraints, or procedural details specific to UL FRI. In
+retrieval-grounded configurations, errors were typically caused by
+ambiguous questions, context-dependent scenarios where the correct
+answer depends on the student's specific situation, or cases not
+explicitly covered in the knowledge base, often resulting in
+appropriate fallback responses.
+
+The results suggest that smaller local models can achieve competitive
+performance when paired with sufficiently strong retrieval. Despite
+the substantial difference in model size, the tuned Gemma
+configuration approached the performance of the larger Llama model
+after retrieval depth was increased, indicating that careful retrieval
+design may provide larger practical gains than model scale alone in
+closed institutional domains. Future work could extend the knowledge base with automatically
+scraped and updated sources, introduce a mechanism for detecting
+and flagging outdated information such as expired deadlines or
+changed funding amounts, and explore re-ranking or query expansion
+to further improve retrieval precision.
 
 %----------------------------------------------------------------------------------------
 %   REFERENCE LIST
