@@ -13,7 +13,7 @@ Usage:
     python code/evaluate_gemini.py --model gemini-1.5-pro # override model
 
 Output:
-    evaluation/gemini_evaluation_baseline_results.csv   — per-question results
+    evaluation/gemini_evaluation_baseline_results.csv   — per-question results in manual-evaluation CSV format
     evaluation/gemini_evaluation_baseline_summary.txt   — overall metrics
 """
 
@@ -53,23 +53,47 @@ SYSTEM_PROMPT = (
 )
 
 EVAL_PROMPT = ChatPromptTemplate.from_template(
-    """You are an expert evaluator for a University chatbot QA system.
+    """You are evaluating answers produced by a baseline Erasmus+ assistant.
 
-Compare the model answer with the expected answer and respond in this EXACT format:
-SCORE: <0-100>
-ASSESSMENT: <CORRECT/PARTIALLY_CORRECT/INCORRECT/HALLUCINATED>
-EXPLANATION: <1-2 sentences>
+Your task is to compare the model answer with the expected answer and evaluate:
+1. factual correctness,
+2. completeness of important details,
+3. whether unsupported information was invented.
 
-Guidelines:
-- CORRECT (90-100): answer contains expected information or a valid equivalent
-- PARTIALLY_CORRECT (50-89): some correct info but missing key details
-- INCORRECT (20-49): on-topic but wrong or significantly incomplete
-- HALLUCINATED (0-19): misleading, contradicts expected answer, or off-topic
+Use this scoring rubric:
+- 3 = correct and complete enough for a student-facing answer.
+- 2 = mostly correct, but missing important details, constraints, deadlines, or institutional specifics.
+- 1 = partially correct or related, but weak, vague, misleading, or missing most of the expected answer.
+- 0 = incorrect, unusable, or the model refuses/falls back when a useful answer is expected.
+
+Hallucination means the answer invents unsupported factual information, such as fake procedures, fake requirements, fake links, wrong universities, wrong amounts, wrong deadlines, or unsupported confident claims.
+A fallback answer such as "I don't have that information" is not automatically a hallucination. It should usually receive score 0 or 1 if the expected answer contains useful information.
+
+Respond in this EXACT format:
+SCORE: <3/2/1/0>
+HALLUCINATION: <True/False>
+NOTES: <one concise sentence explaining the decision>
 
 Question: {question}
-Expected Answer: {expected}
-Model Answer: {model_answer}"""
+
+Expected Answer:
+{expected}
+
+Model Answer:
+{model_answer}
+"""
 )
+
+MANUAL_EVAL_COLUMNS = [
+    "ID",
+    "Question",
+    "Expected Answer",
+    "Baseline — Answer",
+    "Baseline — Score (3/2/1/0)",
+    "Baseline — Halucination",
+    "Baseline — Notes",
+    "Retrieval Needed",
+]
 
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
@@ -118,17 +142,32 @@ def make_llm(model_name: str) -> ChatGoogleGenerativeAI:
 
 
 def parse_eval_response(text: str) -> dict:
-    result = {"score": 0, "assessment": "UNKNOWN", "explanation": ""}
+    result = {
+        "score": 0,
+        "hallucination": False,
+        "notes": "",
+    }
+
     for line in text.strip().splitlines():
-        if line.startswith("SCORE:"):
+        line = line.strip()
+        upper = line.upper()
+
+        if upper.startswith("SCORE:"):
+            value = line.split(":", 1)[1].strip()
             try:
-                result["score"] = int(line.replace("SCORE:", "").strip())
+                score = int(value)
+                if score in [0, 1, 2, 3]:
+                    result["score"] = score
             except ValueError:
                 pass
-        elif line.startswith("ASSESSMENT:"):
-            result["assessment"] = line.replace("ASSESSMENT:", "").strip()
-        elif line.startswith("EXPLANATION:"):
-            result["explanation"] = line.replace("EXPLANATION:", "").strip()
+
+        elif upper.startswith("HALLUCINATION:"):
+            value = line.split(":", 1)[1].strip().lower()
+            result["hallucination"] = value in ["true", "yes", "1"]
+
+        elif upper.startswith("NOTES:"):
+            result["notes"] = line.split(":", 1)[1].strip()
+
     return result
 
 
@@ -155,24 +194,31 @@ def judge(question: str, expected: str, prediction: str, eval_chain) -> dict:
 def save_csv(results: list, path: str) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=results[0].keys())
+        writer = csv.DictWriter(
+            f,
+            fieldnames=MANUAL_EVAL_COLUMNS,
+            quoting=csv.QUOTE_ALL,
+        )
         writer.writeheader()
         writer.writerows(results)
     print(f"\n[INFO] Results saved → '{path}'")
 
 
-def print_summary(results: list, f1_scores: list, gemini_scores: list, model_name: str, output: str) -> None:
-    n             = len(results)
-    avg_f1        = sum(f1_scores) / len(f1_scores) if f1_scores else 0.0
-    avg_gemini    = sum(gemini_scores) / len(gemini_scores) if gemini_scores else 0.0
-    key_info_rate = sum(1 for r in results if r["has_key_info"]) / n if n else 0.0
+def print_summary(results: list, f1_scores: list, eval_scores: list, model_name: str, output: str) -> None:
+    n = len(results)
+    avg_f1 = sum(f1_scores) / len(f1_scores) if f1_scores else 0.0
+    avg_eval_score = sum(eval_scores) / len(eval_scores) if eval_scores else 0.0
+    key_info_rate = sum(1 for r in results if "Key info hit: True" in r["Baseline — Notes"]) / n if n else 0.0
+    hallucination_rate = sum(1 for r in results if r["Baseline — Halucination"]) / n if n else 0.0
 
-    assessments  = [r["gemini_assessment"] for r in results]
-    correct      = sum(1 for a in assessments if a == "CORRECT")
-    partial      = sum(1 for a in assessments if a == "PARTIALLY_CORRECT")
-    incorrect    = sum(1 for a in assessments if a == "INCORRECT")
-    hallucinated = sum(1 for a in assessments if a == "HALLUCINATED")
-    pct          = lambda x: f"{x * 100 // n:2d}" if n else " 0"
+    score_counts = {
+        3: sum(1 for r in results if int(r["Baseline — Score (3/2/1/0)"]) == 3),
+        2: sum(1 for r in results if int(r["Baseline — Score (3/2/1/0)"]) == 2),
+        1: sum(1 for r in results if int(r["Baseline — Score (3/2/1/0)"]) == 1),
+        0: sum(1 for r in results if int(r["Baseline — Score (3/2/1/0)"]) == 0),
+    }
+
+    pct = lambda x: f"{(x / n * 100):.0f}" if n else "0"
 
     summary = (
         f"\n{'='*65}\n"
@@ -181,14 +227,15 @@ def print_summary(results: list, f1_scores: list, gemini_scores: list, model_nam
         f"  Model              : {model_name}\n"
         f"  Questions          : {n}\n"
         f"  Avg F1 score       : {avg_f1:.4f}  ({avg_f1*100:.1f}%)\n"
-        f"  Avg Gemini score   : {avg_gemini:.1f}/100\n"
+        f"  Avg eval score     : {avg_eval_score:.2f}/3\n"
         f"  Key info hit       : {key_info_rate*100:.1f}%\n"
+        f"  Hallucination rate : {hallucination_rate*100:.1f}%\n"
         f"\n"
-        f"  Assessment breakdown:\n"
-        f"    CORRECT           : {correct:3d} ({pct(correct)}%)\n"
-        f"    PARTIALLY_CORRECT : {partial:3d} ({pct(partial)}%)\n"
-        f"    INCORRECT         : {incorrect:3d} ({pct(incorrect)}%)\n"
-        f"    HALLUCINATED      : {hallucinated:3d} ({pct(hallucinated)}%)\n"
+        f"  Manual-style score breakdown:\n"
+        f"    SCORE 3           : {score_counts[3]:3d} ({pct(score_counts[3])}%)\n"
+        f"    SCORE 2           : {score_counts[2]:3d} ({pct(score_counts[2])}%)\n"
+        f"    SCORE 1           : {score_counts[1]:3d} ({pct(score_counts[1])}%)\n"
+        f"    SCORE 0           : {score_counts[0]:3d} ({pct(score_counts[0])}%)\n"
         f"{'='*65}\n"
     )
     print(summary)
@@ -224,7 +271,7 @@ def evaluate(qa_file: str, output: str, limit: int | None, model_name: str) -> N
 
     results       = []
     f1_scores     = []
-    gemini_scores = []
+    eval_scores = []
 
     print(f"{'='*65}")
     print(f"  Running ({len(qa_pairs)} questions)...")
@@ -255,49 +302,57 @@ def evaluate(qa_file: str, output: str, limit: int | None, model_name: str) -> N
         has_key = contains_key_info(prediction, expected)
         f1_scores.append(f1)
 
-        # Step 3 — Gemini-as-judge
-        gemini_score, gemini_assessment, gemini_explanation = 0, "N/A", ""
+        # Step 3 — Gemini-as-judge using the manual 3/2/1/0 rubric
+        eval_score = 0
+        eval_hallucination = False
+        eval_notes = ""
+
         if not prediction.startswith("ERROR:"):
             try:
-                scored              = judge(question, expected, prediction, eval_chain)
-                gemini_score        = scored["score"]
-                gemini_assessment   = scored["assessment"]
-                gemini_explanation  = scored["explanation"]
-                gemini_scores.append(gemini_score)
+                scored = judge(question, expected, prediction, eval_chain)
+                eval_score = scored["score"]
+                eval_hallucination = scored["hallucination"]
+                eval_notes = scored["notes"]
+                eval_scores.append(eval_score)
             except Exception as exc:
                 if is_rate_limit_error(exc):
                     print(f"\n[CRITICAL] Rate limit during judge call — saving partial results.")
                     results.append(_row(qid, question, expected, prediction, f1, has_key,
-                                        gemini_score, gemini_assessment, gemini_explanation, elapsed))
+                                        eval_score, eval_hallucination, eval_notes, elapsed))
                     save_csv(results, output)
                     sys.exit(1)
-                gemini_assessment = f"EVAL_ERROR: {exc}"
+                eval_notes = f"EVAL_ERROR: {exc}"
 
-        print(f"        F1={f1:.2f}  score={gemini_score}/100  [{gemini_assessment}]  ({elapsed:.1f}s)")
+        print(f"        F1={f1:.2f}  eval_score={eval_score}/3  hallucination={eval_hallucination}  ({elapsed:.1f}s)")
 
         results.append(_row(qid, question, expected, prediction, f1, has_key,
-                            gemini_score, gemini_assessment, gemini_explanation, elapsed))
+                            eval_score, eval_hallucination, eval_notes, elapsed))
 
         if i < len(qa_pairs):
             time.sleep(0.4)
 
     save_csv(results, output)
-    print_summary(results, f1_scores, gemini_scores, model_name, output)
+    print_summary(results, f1_scores, eval_scores, model_name, output)
 
 
 def _row(qid, question, expected, prediction, f1, has_key,
-         gemini_score, gemini_assessment, gemini_explanation, elapsed) -> dict:
+         eval_score, eval_hallucination, eval_notes, elapsed) -> dict:
+    notes = (
+        f"Judge notes: {eval_notes} | "
+        f"F1: {round(f1, 4)} | "
+        f"Key info hit: {has_key} | "
+        f"Time: {round(elapsed, 2)}s"
+    )
+
     return {
-        "id":                 qid,
-        "question":           question,
-        "expected":           expected,
-        "gemini_answer":      prediction,
-        "f1":                 round(f1, 4),
-        "has_key_info":       has_key,
-        "gemini_score":       gemini_score,
-        "gemini_assessment":  gemini_assessment,
-        "gemini_explanation": gemini_explanation,
-        "time_s":             round(elapsed, 2),
+        "ID": qid,
+        "Question": question,
+        "Expected Answer": expected,
+        "Baseline — Answer": prediction,
+        "Baseline — Score (3/2/1/0)": eval_score,
+        "Baseline — Halucination": eval_hallucination,
+        "Baseline — Notes": notes,
+        "Retrieval Needed": "",
     }
 
 

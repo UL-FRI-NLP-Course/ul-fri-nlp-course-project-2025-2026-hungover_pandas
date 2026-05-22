@@ -4,13 +4,14 @@
 =================================================================
   Model              : gemini-2.5-pro
   Questions          : 210
-  Avg F1 score       : 0.1758  (17.6%)
-  Avg Gemini score   : 74.2/100
-  Key info hit       : 96.7%
+  Avg F1 score       : 0.1771  (17.7%)
+  Avg eval score     : 2.09/3
+  Key info hit       : 98.1%
+  Hallucination rate : 32.9%
 
-  Assessment breakdown:
-    CORRECT           : 116 (55%)
-    PARTIALLY_CORRECT :  36 (17%)
-    INCORRECT         :  33 (15%)
-    HALLUCINATED      :  25 (11%)
+  Manual-style score breakdown:
+    SCORE 3           : 117 (56%)
+    SCORE 2           :  24 (11%)
+    SCORE 1           :  40 (19%)
+    SCORE 0           :  29 (14%)
 =================================================================
